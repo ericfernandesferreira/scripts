@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Adicionando um usuario
-groupadd sudo
-useradd -m -G users,wheel,audio,cdrom,portage,usb,video,sudo,bin,daemon,disk,sys,input -s /bin/bash eric
+# groupadd sudo
+useradd -m -G users,wheel,audio,cdrom,portage,usb,video,bin,daemon,disk,sys,input -s /bin/bash eric
 passwd eric
 
 # Instalando o sudo

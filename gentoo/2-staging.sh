@@ -9,6 +9,7 @@ rm stage3-*.tar.bz2
 # Arrumando o /etc/portage/
 cd /mnt/gentoo/etc/portage/
 rm -rf package.use
+echo "net-misc/iputils -caps -filecaps" >> /mnt/gentoo/etc/portage/package.use
 cd /mnt/gentoo/
 cp /mnt/gentoo/home/backup/scripts/gentoo/make-install.conf /mnt/gentoo/etc/portage/make.conf
 

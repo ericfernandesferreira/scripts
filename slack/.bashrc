@@ -1,5 +1,10 @@
 alias ls='ls --color=auto'
-export PS1="\u\[$(tput sgr0)\]\[\033[38;5;39m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\h \[$(tput sgr0)\]\[\033[38;5;39m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+# Cinza
+export PS1="\u\[$(tput sgr0)\]\[\033[38;5;245m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\h \[$(tput sgr0)\]\[\033[38;5;245m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+# Azul
+# export PS1="\u\[$(tput sgr0)\]\[\033[38;5;39m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\h \[$(tput sgr0)\]\[\033[38;5;39m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 # Para o sudo completar todos os comandos
 if ! shopt -oq posix; then

@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Instalando o Xorg
-echo "media-libs/mesa gles1 -gallium -llvm" >> /etc/portage/package.use
+echo "media-libs/mesa gles1 opencl xa" >> /etc/portage/package.use
+echo "sys-devel/llvm clang" >> /etc/portage/package.use
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers gtk3" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
@@ -11,8 +12,8 @@ emerge -av x11-base/xorg-server
 env-update && source /etc/profile
 
 # Instalando os drivers Nvidia
-# Para reinstalar o modulo da Nvidia caso mude kernel "emerge @module-rebuild"
-# e make_prepare
+# Para reinstalar o modulo da Nvidia caso mude kernel
+# Digite após compilar o novo kernel "make_prepare" "emerge @module-rebuild"
 nvidia-xconfig --composite --cool-bits=12
 eselect opengl set nvidia
 eselect opencl set nvidia
@@ -26,6 +27,7 @@ eselect lcdfilter list
 
 # Instalando fontes
 emerge -av media-fonts/droid
+echo "media-fonts/roboto ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/roboto
 emerge -av media-fonts/ubuntu-font-family
 echo "media-fonts/corefonts tahoma" >> /etc/portage/package.use

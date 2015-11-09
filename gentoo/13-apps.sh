@@ -15,15 +15,21 @@ echo "app-arch/unrar ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av app-arch/unrar
 
 # p7zip
+echo "app-arch/p7zip ~amd64" >> /etc/portage/package.accept_keywords
 echo "app-arch/p7zip -wxwidgets" >> /etc/portage/package.use
 emerge -av app-arch/p7zip
 
 # Gimp
 emerge -av media-gfx/gimp
 
+# Git
+emerge -av dev-ruby/git
+
 # GParted
-echo "sys-block/gparted btrfs f2fs" >> /etc/portage/package.use
-emerge -av sys-block/gparted
+echo "sys-fs/ufsutils ~amd64" >> /etc/portage/package.accept_keywords
+echo "sys-block/gparted btrfs f2fs ufs" >> /etc/portage/package.use
+echo "sys-block/gparted ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av sys-fs/ufsutils sys-block/gparted
 
 # Screenfetch
 echo "app-misc/screenfetch ~amd64" >> /etc/portage/package.accept_keywords
@@ -32,6 +38,13 @@ emerge -av app-misc/screenfetch
 # Skype
 echo "net-im/skype ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av net-im/skype
+
+# VirtualBox
+echo "app-emulation/virtualbox extensions qt4" >> /etc/portage/package.use
+emerge -av app-emulation/virtualbox
+emerge -av app-emulation/virtualbox-extpack-oracle
+echo modules='"vboxdrv vboxnetflt vboxnetadp"' >> /etc/conf.d/modules
+gpasswd -a eric vboxusers
 
 # qBittorrent
 echo "net-p2p/qbittorrent qt4" >> /etc/portage/package.use
