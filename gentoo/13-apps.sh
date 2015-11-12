@@ -40,9 +40,15 @@ echo "net-im/skype ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av net-im/skype
 
 # VirtualBox
-echo "app-emulation/virtualbox extensions qt4" >> /etc/portage/package.use
+echo "app-emulation/virtualbox ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-emulation/virtualbox-additions ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-emulation/virtualbox-extpack-oracle ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-emulation/virtualbox-modules ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-emulation/virtualbox qt4" >> /etc/portage/package.use
 emerge -av app-emulation/virtualbox
+emerge -av app-emulation/virtualbox-additions
 emerge -av app-emulation/virtualbox-extpack-oracle
+
 echo modules='"vboxdrv vboxnetflt vboxnetadp"' >> /etc/conf.d/modules
 gpasswd -a eric vboxusers
 

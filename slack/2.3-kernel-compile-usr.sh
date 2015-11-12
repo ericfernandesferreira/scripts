@@ -4,8 +4,8 @@
 removepkg kernel-generic
 removepkg kernel-huge
 removepkg kernel-modules
-rm -rf /lib/modules/4.2.5/
-rm -rf /usr/src/linux-4.2.5/
+rm -rf /lib/modules/4.3/
+rm -rf /usr/src/linux-4.3/
 rm -rf /usr/src/linux
 rm /boot/config
 rm /boot/vmlinuz
