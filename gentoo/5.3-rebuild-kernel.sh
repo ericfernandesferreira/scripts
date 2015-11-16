@@ -15,6 +15,7 @@ make CFLAGS='"-march=haswell -O3 -pipe"' -j5 && make modules_install && make ins
 grub2-mkconfig -o /boot/grub/grub.cfg
 
 # Reempacotando
+make modules_prepare
 emerge -av @module-rebuild
 eselect opengl set nvidia
 eselect opencl set nvidia

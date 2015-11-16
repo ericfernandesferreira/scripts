@@ -1,11 +1,13 @@
 #!/bin/sh
 
 # Instalando a base do xfce4
+echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
 emerge --ask xfce-base/xfce4-meta
-for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev games ; do gpasswd -a eric $x ; done
+for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 
 # Adicionando o xfce4 para iniciar

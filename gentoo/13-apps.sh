@@ -5,10 +5,10 @@ echo "media-sound/audacious ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-plugins/audacious-plugins ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-sound/audacious
 
-# Google Chrome Beta
-echo "www-client/google-chrome-beta" >> /etc/portage/package.accept_keywords
+# Google Chrome
+echo "www-client/google-chrome" >> /etc/portage/package.accept_keywords
 echo "app-text/ghostscript-gpl cups" >> /etc/portage/package.use
-emerge -av www-client/google-chrome-beta
+emerge -av www-client/google-chrome
 
 # Unrar
 echo "app-arch/unrar ~amd64" >> /etc/portage/package.accept_keywords
@@ -34,6 +34,11 @@ emerge -av sys-fs/ufsutils sys-block/gparted
 # Screenfetch
 echo "app-misc/screenfetch ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av app-misc/screenfetch
+
+# vlc
+echo "media-video/vlc ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-video/vlc qt4" >> /etc/portage/package.use
+emerge -av media-video/vlc
 
 # Skype
 echo "net-im/skype ~amd64" >> /etc/portage/package.accept_keywords

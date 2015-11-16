@@ -7,6 +7,8 @@ echo "app-arch/engrampa caja" >> /etc/portage/package.use
 echo "app-text/atril caja" >> /etc/portage/package.use
 echo "x11-libs/libva egl" >> /etc/portage/package.use
 echo "mate-extra/mate-power-manager -gnome-keyring" >> /etc/portage/package.use
+echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
