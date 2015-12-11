@@ -6,7 +6,7 @@ echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
-emerge --ask xfce-base/xfce4-meta
+emerge -av xfce-base/xfce4-meta
 for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 
@@ -39,7 +39,7 @@ echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
 emerge --ask xfce-extra/tumbler
 
 # Dando uma atualizada no sistema geral antes de prosseguir
-emerge --ask --changed-use --deep @world
+emerge -av --changed-use --deep @world
 env-update && source /etc/profile
 
 # Habilitando o consolekit e dbus no init

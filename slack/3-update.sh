@@ -18,7 +18,7 @@ removepkg zd1211-firmware ytalk
 removepkg anthy scim-anthy xf86-video-voodoo
 removepkg xf86-video-ati xf86-video-r128
 removepkg xf86-video-s3 xf86-video-s3virge xf86-video-savage
-removepkg xf86-video-sis ttf-indic-fonts libva-intel-driver
+removepkg xf86-video-sis ttf-indic-fonts
 
 # Atualizando o mirrors do slackpkg (Current)
 cp mirrors /etc/slackpkg/mirrors

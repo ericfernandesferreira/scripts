@@ -23,7 +23,18 @@ emerge -av app-arch/p7zip
 emerge -av media-gfx/gimp
 
 # Git
+echo "dev-vcs/git cgi highlight" >> /etc/portage/package.use
+echo "app-text/highlight qt4" >> /etc/portage/package.use
 emerge -av dev-ruby/git
+
+# Steam
+echo "games-util/steam-launcher ~amd64" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-meta ~amd64" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-games-meta ~amd64" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-client-meta ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-fonts/steamfonts ~amd64" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-client-meta steamfonts trayicon" >> /etc/portage/package.use
+emerge -av steam-meta
 
 # GParted
 echo "sys-fs/ufsutils ~amd64" >> /etc/portage/package.accept_keywords

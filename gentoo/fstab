@@ -1,7 +1,7 @@
 # <fs>			<mountpoint>	<type>		<opts>				<dump/pass>
-/dev/sda1		/boot/efi	vfat		defaults			1	0
-/dev/sda2		swap		swap		defaults			0	0
-/dev/sda5		/		ext4		defaults,discard,noatime	1	1
-/dev/sda6		/home/backup	ext4		defaults,discard,noatime	1	2
-/dev/sda7		/home/games	ext4		defaults,discard,noatime	1	2
+/dev/sdc1		/boot/efi	vfat		defaults			1	0
+/dev/sdc2		swap		swap		defaults			0	0
+/dev/sdc5		/		ext4		defaults,discard,noatime	1	1
+/dev/sda1		/home/backup	ext4		defaults,discard,noatime	1	2
+/dev/sda2		/home/games	ext4		defaults,discard,noatime	1	2
 /dev/sdb1		/home/hd	ntfs-3g		fmask=111,dmask=000		1	0
