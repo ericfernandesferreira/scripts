@@ -8,7 +8,7 @@
 # Recompilando o Kernel
 cd /usr/src/linux
 make mrproper
-cp /home/backup/kernel/configs/grinder-gentoo2 /usr/src/linux/.config
+cp /home/backup/kernel/configs/grinder-gentoo /usr/src/linux/.config
 make CFLAGS='"-march=haswell -O3 -pipe"' -j5 && make modules_install && make install
 
 # Atualizando o Grub

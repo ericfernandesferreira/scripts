@@ -69,7 +69,7 @@ echo modules='"vboxdrv vboxnetflt vboxnetadp"' >> /etc/conf.d/modules
 gpasswd -a eric vboxusers
 
 # qBittorrent
-echo "net-p2p/qbittorrent qt4" >> /etc/portage/package.use
+echo "net-p2p/qbittorrent qt4 -qt5" >> /etc/portage/package.use
 echo "dev-qt/qtlockedfile qt4" >> /etc/portage/package.use
 echo "dev-qt/qtsingleapplication qt4" >> /etc/portage/package.use
 echo "net-p2p/qbittorrent ~amd64" >> /etc/portage/package.accept_keywords

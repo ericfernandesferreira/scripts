@@ -6,7 +6,7 @@
 # A
 removepkg floppy
 # AP
-removepkg hplip jed joe jove radeontool sox
+removepkg hplip jed joe jove radeontool
 # D
 removepkg distcc
 # N

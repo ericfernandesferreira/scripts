@@ -12,7 +12,7 @@ cp .bashroot /root/.bashrc
 
 passwd eric
 
-installpkg bash-completion-2.1-noarch-2.txz
+installpkg bash-completion-2.2-noarch-1.txz
 
 # Arrumando o blacklist do slackpkg
 echo "[0-9]+_SBo" >> /etc/slackpkg/blacklist
@@ -25,3 +25,6 @@ echo "[0-9]+compat32" >> /etc/slackpkg/blacklist
 echo "fontconfig" >> /etc/slackpkg/blacklist
 echo "freetype" >> /etc/slackpkg/blacklist
 echo "cairo" >> /etc/slackpkg/blacklist
+
+# Colocando como padrão para compilação os 4 processadores
+echo 'export MAKEFLAGS="--jobs=5"' >> /etc/profile
