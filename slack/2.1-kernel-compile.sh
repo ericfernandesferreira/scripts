@@ -19,7 +19,7 @@ rm /boot/config
 cd arch/x86_64/boot
 cp bzImage /boot/vmlinuz-4.5
 rm /boot/vmlinuz
-cp -a /etc/rc.d/rc.modules-4.4.4 /etc/rc.d/rc.modules-4.5
+cp -a /etc/rc.d/rc.modules-4.4.6 /etc/rc.d/rc.modules-4.5
 
 # Removendo o kernel antigo
 removepkg kernel-generic
