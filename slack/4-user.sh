@@ -12,7 +12,7 @@ cp .bashroot /root/.bashrc
 
 passwd eric
 
-installpkg bash-completion-2.2-noarch-1.txz
+installpkg bash-completion-2.2-noarch-2.txz
 
 # Arrumando o blacklist do slackpkg
 echo "[0-9]+_SBo" >> /etc/slackpkg/blacklist
