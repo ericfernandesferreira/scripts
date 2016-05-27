@@ -26,5 +26,3 @@ echo "fontconfig" >> /etc/slackpkg/blacklist
 echo "freetype" >> /etc/slackpkg/blacklist
 echo "cairo" >> /etc/slackpkg/blacklist
 
-# Colocando como padrão para compilação os 4 processadores
-echo 'export MAKEFLAGS="--jobs=5"' >> /etc/profile

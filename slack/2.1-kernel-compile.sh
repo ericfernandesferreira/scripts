@@ -2,35 +2,35 @@
 
 # Compilando o novo kernel
 cd /home/backup/kernel
-cp linux-4.5.tar.xz /usr/src
+cp linux-4.6.tar.xz /usr/src
 cd /usr/src
-tar xvf linux-4.5.tar.xz
-ln -s linux-4.5 linux
-rm linux-4.5.tar.xz
+tar xvf linux-4.6.tar.xz
+ln -s linux-4.6 linux
+rm linux-4.6.tar.xz
 cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
 cd /usr/src/linux
-make CFLAGS='"-O2 -march=haswell -pipe"' -j5 bzImage &&  make CFLAGS='"-O2 -march=haswell -pipe"' -j5 modules && make CFLAGS='"-O2 -march=haswell -pipe"' -j5 modules_install
+make CFLAGS='"-O3 -march=haswell -pipe"' -j5 bzImage &&  make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules && make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules_install
 
 # Arrumando os symlinks
-cp System.map /boot/System.map-4.5
+cp System.map /boot/System.map-4.6
 rm /boot/System.map
-cp .config /boot/config-4.5
+cp .config /boot/config-4.6
 rm /boot/config
 cd arch/x86_64/boot
-cp bzImage /boot/vmlinuz-4.5
+cp bzImage /boot/vmlinuz-4.6
 rm /boot/vmlinuz
-cp -a /etc/rc.d/rc.modules-4.4.6 /etc/rc.d/rc.modules-4.5
+cp -a /etc/rc.d/rc.modules-4.4.11 /etc/rc.d/rc.modules-4.6
 
 # Removendo o kernel antigo
 removepkg kernel-generic
 removepkg kernel-huge
 removepkg kernel-modules
-ln -s /boot/System.map-4.5 /boot/System.map
-ln -s /boot/config-4.5 /boot/config
-ln -s /boot/vmlinuz-4.5 /boot/vmlinuz
+ln -s /boot/System.map-4.6 /boot/System.map
+ln -s /boot/config-4.6 /boot/config
+ln -s /boot/vmlinuz-4.6 /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k 4.5 -m ext4 -f ext4 -r /dev/sda5
+# mkinitrd -c -k 4.6 -m ext4 -f ext4 -r /dev/sda5
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
