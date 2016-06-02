@@ -24,9 +24,7 @@ cp bzImage /boot/vmlinuz-$NEW
 removepkg kernel-generic
 removepkg kernel-huge
 removepkg kernel-modules
-rm /boot/System.map
-rm /boot/config
-rm /boot/vmlinuz
+removepkg kernel-source
 rm -rf /usr/src/linux
 
 # Arrumando os symlinks
