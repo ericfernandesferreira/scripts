@@ -2,7 +2,7 @@
 
 # Baixando o source
 echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords
-emerge --ask sys-kernel/gentoo-sources
+emerge -av sys-kernel/gentoo-sources
 
 # Compilando o kernel
 cp /home/backup/kernel/configs/grinder-gentoo /usr/src/linux/.config

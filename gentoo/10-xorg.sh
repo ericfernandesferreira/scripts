@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # Instalando o Xorg
-echo "media-libs/mesa gles1 opencl xa" >> /etc/portage/package.use
-echo "sys-devel/llvm clang" >> /etc/portage/package.use
+echo "media-libs/mesa gles1 xa" >> /etc/portage/package.use
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers gtk3" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
