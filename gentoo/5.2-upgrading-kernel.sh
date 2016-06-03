@@ -1,14 +1,17 @@
 #!/bin/sh
 
+OLD=4.6.0
+NEW=4.6.1
+
 # Trocando o kernel default para o novo
 eselect kernel set 2
 eselect kernel list
 
 # Copiando a config para o novo kernel
-cp /usr/src/linux-4.5.2-gentoo/.config /usr/src/linux/.config
+cp /usr/src/linux-$OLD-gentoo/.config /usr/src/linux-$NEW-gentoo/.config
 
 # Atualizando a config antiga
-cd /usr/src/linux
+cd /usr/src/linux-$NEW-gentoo
 make oldconfig
 cp .config /home/backup/kernel/configs/grinder-gentoo
 
@@ -20,13 +23,13 @@ emerge -av @module-rebuild
 # Removendo o kernel antigo
 emerge -av --depclean
 cd /usr/src/
-rm -rf linux-4.5.2-gentoo
+rm -rf linux-$OLD-gentoo
 cd /lib/modules
-rm -rf 4.5.2-gentoo-gr1nder
+rm -rf $OLD-gentoo-gr1nder
 cd /boot
-rm config-4.5.2-gentoo-gr1nder
-rm System.map-4.5.2-gentoo-gr1nder
-rm vmlinuz-4.5.2-gentoo-gr1nder
+rm config-$OLD-gentoo-gr1nder
+rm System.map-$OLD-gentoo-gr1nder
+rm vmlinuz-$OLD-gentoo-gr1nder
 
 # Gerando o grub com o kernel atualizado
 grub2-mkconfig -o /boot/grub/grub.cfg

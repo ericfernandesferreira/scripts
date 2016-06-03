@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OLD=4.4.11
+OLD=4.4.12
 NEW=4.6.1
 
 # Compilando o novo kernel
