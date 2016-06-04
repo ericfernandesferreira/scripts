@@ -15,14 +15,14 @@ passwd eric
 installpkg bash-completion-2.2-noarch-3.txz
 
 # Arrumando o blacklist do slackpkg
-echo "[0-9]+_SBo" >> /etc/slackpkg/blacklist
-echo "[0-9]+_csb" >> /etc/slackpkg/blacklist
-echo "[0-9]+_esb" >> /etc/slackpkg/blacklist
-echo "[0-9]+_msb" >> /etc/slackpkg/blacklist
-echo "[0-9]+_xsb" >> /etc/slackpkg/blacklist
 echo "[0-9]+alien" >> /etc/slackpkg/blacklist
 echo "[0-9]+compat32" >> /etc/slackpkg/blacklist
 echo "fontconfig" >> /etc/slackpkg/blacklist
 echo "freetype" >> /etc/slackpkg/blacklist
 echo "cairo" >> /etc/slackpkg/blacklist
-
+echo "audacious" >> /etc/slackpkg/blacklist
+echo "audacious-plugins" >> /etc/slackpkg/blacklist
+echo "gimp" >> /etc/slackpkg/blacklist
+echo "gparted" >> /etc/slackpkg/blacklist
+echo "gst-plugins-good" >> /etc/slackpkg/blacklist
+echo "gst-plugins-good0" >> /etc/slackpkg/blacklist
