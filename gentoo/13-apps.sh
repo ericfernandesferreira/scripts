@@ -23,7 +23,7 @@ emerge -av app-arch/p7zip
 emerge -av media-gfx/gimp
 
 # Git
-echo "dev-vcs/git cgi highlight" >> /etc/portage/package.use
+echo "dev-vcs/git cgi highlight mediawiki" >> /etc/portage/package.use
 echo "app-text/highlight qt4" >> /etc/portage/package.use
 emerge -av dev-ruby/git
 

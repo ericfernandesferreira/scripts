@@ -3,6 +3,7 @@
 # Instalando o Xorg
 echo "media-libs/mesa gles1 xa" >> /etc/portage/package.use
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
+echo "x11-libs/cairo xlib-xcb" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers gtk3" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av --verbose x11-base/xorg-drivers
