@@ -1,21 +1,47 @@
 #!/bin/sh
 
 # Instalando a base do Mate
-echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
-echo "mate-extra/caja-extensions image-converter -cdr" >> /etc/portage/package.use
-echo "app-arch/engrampa caja" >> /etc/portage/package.use
-echo "app-text/atril caja" >> /etc/portage/package.use
+echo "sys-block/parted device-mapper" >> /etc/portage/package.use
 echo "x11-libs/libva egl" >> /etc/portage/package.use
-echo "mate-extra/mate-power-manager -gnome-keyring" >> /etc/portage/package.use
+echo "x11-themes/gtk-engines-murrine animation-rtl" >> /etc/portage/package.use
+echo "app-text/atril caja" >> /etc/portage/package.use
+echo "app-text/enchant aspell" >> /etc/portage/package.use
+echo "app-arch/engrampa caja magic" >> /etc/portage/package.use
+echo "media-libs/alsa-lib alisp" >> /etc/portage/package.use
+echo "media-libs/libbluray aacs" >> /etc/portage/package.use
+echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
+echo "media-gfx/ufraw contrast" >> /etc/portage/package.use
+echo "media-gfx/imagemagick corefonts hdri" >> /etc/portage/package.use
+echo "mate-extra/caja-extensions image-converter -cdr" >> /etc/portage/package.use
+echo "mate-extra/mate-utils applet" >> /etc/portage/package.use
+echo "mate-base/mate-applets-meta sensors" >> /etc/portage/package.use
+
 echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
-echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
+
+echo "mate-base/* ~amd64" >> /etc/portage/package.accept_keywords
+echo "mate-extra/* ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-editors/pluma ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-text/atril ~amd64" >> /etc/portage/package.accept_keywords
+echo "app-arch/engrampa ~amd64" >> /etc/portage/package.accept_keywords
+echo "dev-libs/libmateweather ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-themes/mate-themes ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-themes/mate-themes-meta ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-themes/mate-icon-theme ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-themes/mate-backgrounds ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-wm/marco ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-libs/libmatemixer ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-gfx/eom ~amd64" >> /etc/portage/package.accept_keywords
+echo "net-analyzer/mate-netspeed ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-terms/mate-terminal ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-misc/mozo ~amd64" >> /etc/portage/package.accept_keywords
 
 emerge -av mate-base/mate x11-misc/mozo mate-extra/mate-sensors-applet mate-extra/caja-extensions
 
-# Adicionando grupos para o usuario no X
+# Adicionando grupos para o usuario no XYes
 for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 

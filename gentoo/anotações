@@ -1,0 +1,14 @@
+## Para compilar o Xorg ##
+
+Verificar a opção "fontforge" no aplicativo media-libs/freetype
+Verificar a opção "adobe-cff" no aplicativo media-libs/freetype
+Habilitar posteriormente a opção "Xaw3d" do aplicativo x11-terms/xterm
+Verificar a opção "tools" de vários aplicativos
+Verificar a opção "gnome" de vários aplicativos
+
+Estava observando que mesmo a flag não estar habilitada os aplicativos estão sendo instalados mesmo assim, como:
+"crypt"
+"gcrypt"
+"openldap"
+"nettle"
+

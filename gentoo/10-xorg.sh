@@ -1,9 +1,13 @@
 #!/bin/sh
 
 # Instalando o Xorg
-echo "media-libs/mesa gles1 xa" >> /etc/portage/package.use
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
+echo "media-libs/mesa gles1 xa -vaapi" >> /etc/portage/package.use
+echo "sys-devel/llvm -static-analyzer" >> /etc/portage/package.use
+echo "x11-terms/xterm toolbar" >> /etc/portage/package.use
 echo "x11-libs/cairo xlib-xcb" >> /etc/portage/package.use
+echo "x11-libs/libdrm libkms" >> /etc/portage/package.use
+echo "x11-apps/mesa-progs egl" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers gtk3" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av --verbose x11-base/xorg-drivers
@@ -35,5 +39,8 @@ eselect infinality list
 eselect lcdfilter list
 
 # Dando uma atualizada no sistema geral antes de prosseguir
-# emerge -avuND world
+echo "media-libs/freetype harfbuzz" >> /etc/portage/package.use
+echo "1-) Trocar o bindist por -bindist do dev-libs/openssl"
+echo "2-) Remover o -vaapi do media-libs/mesa"
+echo "3-) Então digite emerge -avuND world"
 env-update && source /etc/profile
