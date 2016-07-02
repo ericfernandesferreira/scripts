@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # libao
-echo default_driver=pulse > /etc/libao.conf
+echo "default_driver=pulse" > /etc/libao.conf
 
 # openal
 mkdir -p /etc/openal

@@ -208,7 +208,7 @@
 # ftp://carroll.aset.psu.edu/pub/linux/distributions/slackware/slackware64-14.2/
 # http://carroll.aset.psu.edu/pub/linux/distributions/slackware/slackware64-14.2/
 # ftp://ftp.gtlib.gatech.edu/nv/ao2/lxmirror/ftp.slackware.com/slackware64-14.2/
-# ftp://ftp.osuosl.org/.2/slackware/slackware64-14.2/
+ftp://ftp.osuosl.org/.2/slackware/slackware64-14.2/
 # http://ftp.osuosl.org/.2/slackware/slackware64-14.2/
 # ftp://hpc-mirror.usc.edu/pub/linux/distributions/slackware/slackware64-14.2/
 # http://hpc-mirror.usc.edu/pub/linux/distributions/slackware/slackware64-14.2/
@@ -336,7 +336,7 @@
 # http://ftp.nluug.nl/os/Linux/distr/slackware/slackware64-current/
 # ftp://mirror.nl.leaseweb.net/slackware/slackware64-current/
 # http://mirror.nl.leaseweb.net/slackware/slackware64-current/
-http://taper.alienbase.nl/mirrors/slackware/slackware64-current/
+# http://taper.alienbase.nl/mirrors/slackware/slackware64-current/
 # NORWAY (NO)
 # ftp://ftp1.uninett.no/slackware/slackware64-current/
 # http://ftp1.uninett.no/slackware/slackware64-current/

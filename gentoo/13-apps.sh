@@ -6,8 +6,7 @@ echo "media-plugins/audacious-plugins ~amd64" >> /etc/portage/package.accept_key
 emerge -av media-sound/audacious
 
 # Google Chrome
-echo "www-client/google-chrome" >> /etc/portage/package.accept_keywords
-echo "app-text/ghostscript-gpl cups" >> /etc/portage/package.use
+echo "www-client/google-chrome ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av www-client/google-chrome
 
 # Unrar
@@ -23,8 +22,6 @@ emerge -av app-arch/p7zip
 emerge -av media-gfx/gimp
 
 # Git
-echo "dev-vcs/git cgi highlight mediawiki" >> /etc/portage/package.use
-echo "app-text/highlight qt4" >> /etc/portage/package.use
 emerge -av dev-ruby/git
 
 # Steam
@@ -36,22 +33,31 @@ echo "sync-uri = https://github.com/anyc/steam-overlay/" >> /etc/portage/repos.c
 echo "auto-sync = Yes" >> /etc/portage/repos.conf/steam-overlay.conf
 
 echo "=games-util/steam-launcher-1.0.0.52 **" >> /etc/portage/package.accept_keywords
+echo "=games-util/steam-client-meta-0-r20160502 **" >> /etc/portage/package.accept_keywords
 echo "games-util/steam-meta ~amd64" >> /etc/portage/package.accept_keywords
 echo "games-util/steam-games-meta ~amd64" >> /etc/portage/package.accept_keywords
-echo "=games-util/steam-client-meta-0-r20160502 **" >> /etc/portage/package.accept_keywords
+
 echo "media-fonts/steamfonts ~amd64" >> /etc/portage/package.accept_keywords
-echo "games-util/steam-client-meta steamfonts trayicon" >> /etc/portage/package.use
+echo "games-util/steam-client-meta steamfonts streaming trayicon" >> /etc/portage/package.use
 emerge -av steam-meta
 
 # GParted
-echo "sys-fs/ufsutils ~amd64" >> /etc/portage/package.accept_keywords
-echo "sys-block/gparted btrfs f2fs ufs" >> /etc/portage/package.use
+echo "sys-block/gparted btrfs f2fs" >> /etc/portage/package.use
 echo "sys-block/gparted ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av sys-fs/ufsutils sys-block/gparted
+emerge -av sys-block/gparted
 
 # Screenfetch
 echo "app-misc/screenfetch ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av app-misc/screenfetch
+
+# qBittorrent
+echo "dev-qt/qtgui:5 egl" >> /etc/portage/package.use
+echo "dev-qt/qtlockedfile qt5" >> /etc/portage/package.use
+echo "dev-qt/qtsingleapplication qt5" >> /etc/portage/package.use
+echo "net-p2p/qbittorrent qt5 -qt4" >> /etc/portage/package.use
+echo "net-p2p/qbittorrent ~amd64" >> /etc/portage/package.accept_keywords
+echo "net-libs/rb_libtorrent ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av net-p2p/qbittorrent
 
 # vlc
 echo "media-video/vlc ~amd64" >> /etc/portage/package.accept_keywords
@@ -74,14 +80,6 @@ emerge -av app-emulation/virtualbox-extpack-oracle
 
 echo modules='"vboxdrv vboxnetflt vboxnetadp"' >> /etc/conf.d/modules
 gpasswd -a eric vboxusers
-
-# qBittorrent
-echo "net-p2p/qbittorrent qt5 -qt4" >> /etc/portage/package.use
-echo "dev-qt/qtlockedfile qt5" >> /etc/portage/package.use
-echo "dev-qt/qtsingleapplication qt5" >> /etc/portage/package.use
-echo "net-p2p/qbittorrent ~amd64" >> /etc/portage/package.accept_keywords
-echo "net-libs/rb_libtorrent ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av net-p2p/qbittorrent
 
 # Dolphin
 echo "=games-emulation/dolphin-9999 **" >> /etc/portage/package.accept_keywords

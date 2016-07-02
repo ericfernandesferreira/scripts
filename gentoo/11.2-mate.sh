@@ -12,9 +12,10 @@ echo "media-libs/libbluray aacs" >> /etc/portage/package.use
 echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
 echo "media-gfx/ufraw contrast" >> /etc/portage/package.use
 echo "media-gfx/imagemagick corefonts hdri" >> /etc/portage/package.use
+echo "mate-base/mate-applets-meta sensors" >> /etc/portage/package.use
 echo "mate-extra/caja-extensions image-converter -cdr" >> /etc/portage/package.use
 echo "mate-extra/mate-utils applet" >> /etc/portage/package.use
-echo "mate-base/mate-applets-meta sensors" >> /etc/portage/package.use
+echo "mate-extra/mate-sensors-applet VIDEO_CARDS: -nvidia" >> /etc/portage/package.use
 
 echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
@@ -41,7 +42,7 @@ echo "x11-misc/mozo ~amd64" >> /etc/portage/package.accept_keywords
 
 emerge -av mate-base/mate x11-misc/mozo mate-extra/mate-sensors-applet mate-extra/caja-extensions
 
-# Adicionando grupos para o usuario no XYes
+# Adicionando grupos para o usuário no X
 for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 
@@ -53,6 +54,7 @@ echo "exec ck-launch-session dbus-launch mate-session" > /home/eric/.xsession
 # Para esconder icones do Desktop
 # dconf write /org/mate/caja/desktop/computer-icon-visible false
 # dconf write /org/mate/caja/desktop/volumes-visible false
+# dconf write /org/mate/caja/desktop/thrash-icon-visible false
 
 # Fixando o cursor do mouse
 mkdir -p /home/eric/.icons/default
