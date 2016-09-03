@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OLD=4.4.14
-NEW=4.6.3
+NEW=4.7.2
 
 # Compilando o novo kernel
 cd /home/backup/kernel

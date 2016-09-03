@@ -21,6 +21,7 @@ echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-libs/webrtc-audio-processing ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
 
 echo "mate-base/* ~amd64" >> /etc/portage/package.accept_keywords
@@ -39,6 +40,7 @@ echo "media-gfx/eom ~amd64" >> /etc/portage/package.accept_keywords
 echo "net-analyzer/mate-netspeed ~amd64" >> /etc/portage/package.accept_keywords
 echo "x11-terms/mate-terminal ~amd64" >> /etc/portage/package.accept_keywords
 echo "x11-misc/mozo ~amd64" >> /etc/portage/package.accept_keywords
+echo "x11-misc/mate-notification-daemon" >> /etc/portage/package.accept_keywords
 
 emerge -av mate-base/mate x11-misc/mozo mate-extra/mate-sensors-applet mate-extra/caja-extensions
 

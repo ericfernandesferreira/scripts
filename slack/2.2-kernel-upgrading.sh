@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=4.6.2
-OLD_LIB=4.6.2
-NEW=4.6.3
+OLD=4.7.2
+OLD_LIB=4.7.2
+NEW=4.7.2
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -17,7 +17,7 @@ cp /usr/src/linux-$OLD/.config /usr/src/linux-$NEW/.config
 # cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
 make oldconfig
 cp .config /home/backup/kernel/configs/grinder-slackware
-make CFLAGS='"-march=haswell -03 -pipe"' -j5 bzImage && make CFLAGS='"-march=haswell -03 -pipe"' -j5 modules && make CFLAGS='"-march=haswell -03 -pipe"' -j5 modules_install
+make CFLAGS='"-O3 -march=haswell -pipe"' -j5 bzImage && make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules && make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules_install
 
 # Arrumando os symlinks
 cp System.map /boot/System.map-$NEW

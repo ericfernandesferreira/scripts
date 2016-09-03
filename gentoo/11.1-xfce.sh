@@ -5,6 +5,7 @@ echo "media-libs/x264 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/x265 ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/openal ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-libs/webrtc-audio-processing ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-sound/pulseaudio ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av xfce-base/xfce4-meta
 for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done

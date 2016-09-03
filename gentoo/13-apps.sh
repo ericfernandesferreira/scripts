@@ -86,7 +86,7 @@ echo "=games-emulation/dolphin-9999 **" >> /etc/portage/package.accept_keywords
 echo "net-libs/mbedtls ~amd64" >> /etc/portage/package.accept_keywords
 echo "net-libs/enet ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/libsfml ~amd64" >> /etc/portage/package.accept_keywords
-echo "media-libs/libsdl2 haptic" >> /etc/portage/package.use
+echo "media-libs/libsdl2 haptic gles" >> /etc/portage/package.use
 echo "net-libs/polarssl havege" >> /etc/portage/package.use
 emerge -av games-emulation/dolphin
 gpasswd -a eric games

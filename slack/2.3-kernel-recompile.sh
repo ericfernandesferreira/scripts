@@ -1,6 +1,7 @@
 #!/bin/sh
 
-VERSION=4.6.3
+VERSION=4.7
+VERSION_MODULES=4.7.0
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -9,12 +10,12 @@ rm /boot/config
 rm /boot/config-$VERSION
 rm /boot/vmlinuz
 rm /boot/vmlinuz-$VERSION
-rm -rf /lib/modules/$VERSION
+rm -rf /lib/modules/$VERSION_MODULES
 
 # Compilando o novo kernel
 cd /usr/src/linux-$VERSION
 make clean
-make CFLAGS='"-O3 -march=haswell -pipe"' -j5 bzImage &&  make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules && make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules_install
+make CFLAGS='"-O3 -march=haswell"' -j5 bzImage &&  make CFLAGS='"-O3 -march=haswell"' -j5 modules && make CFLAGS='"-O3 -march=haswell"' -j5 modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$VERSION

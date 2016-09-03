@@ -6,5 +6,5 @@
 
 cp nouveau.conf /etc/modprobe.d/
 
-grub-install /dev/sdc1
+grub-install /dev/sda1
 grub-mkconfig -o /boot/grub/grub.cfg
