@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=4.6.4
-NEW=4.7.0
+OLD=4.7.5
+NEW=4.7.5
 
 # Trocando o kernel default para o novo
 eselect kernel set 2
@@ -32,4 +32,4 @@ rm System.map-$OLD-gentoo-gr1nder
 rm vmlinuz-$OLD-gentoo-gr1nder
 
 # Gerando o grub com o kernel atualizado
-grub2-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg

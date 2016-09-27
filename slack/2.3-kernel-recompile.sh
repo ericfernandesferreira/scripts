@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=4.7
-VERSION_MODULES=4.7.0
+VERSION=4.7.5
+VERSION_MODULES=4.7.5
 
 # Removendo o kernel antigo
 rm /boot/System.map
