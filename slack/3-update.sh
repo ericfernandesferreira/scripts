@@ -10,8 +10,7 @@ removepkg hplip jed joe jove radeontool
 # D
 removepkg distcc
 # N
-removepkg alpine biff+comsat bluez-firmware bluez
-removepkg bluez-hcidump elm ipw2100-fw ipw2200-fw netatalk nmap nn
+removepkg alpine biff+comsat elm ipw2100-fw ipw2200-fw netatalk nmap nn
 removepkg slrn snownews tin trn wireless-tools wpa_supplicant
 removepkg zd1211-firmware ytalk
 # X

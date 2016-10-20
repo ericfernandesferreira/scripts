@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=4.7.5
-VERSION_MODULES=4.7.5
+VERSION=4.8.3
+VERSION_MODULES=4.8.3
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -29,7 +29,7 @@ ln -s /boot/config-$VERSION /boot/config
 ln -s /boot/vmlinuz-$VERSION /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $VERSION -m ext4 -f ext4 -r /dev/sdc5
+# mkinitrd -c -k $VERSION -m ext4 -f ext4 -r /dev/sda5
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

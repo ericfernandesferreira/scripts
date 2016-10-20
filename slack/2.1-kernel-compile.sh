@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=4.4.14
-NEW=4.7.5
+OLD=4.4.19
+NEW=4.8.3
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -35,7 +35,7 @@ ln -s /boot/config-$NEW /boot/config
 ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sdc5
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sda5
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

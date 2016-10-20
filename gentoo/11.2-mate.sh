@@ -11,7 +11,7 @@ echo "media-libs/alsa-lib alisp" >> /etc/portage/package.use
 echo "media-libs/libbluray aacs" >> /etc/portage/package.use
 echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
 echo "media-gfx/ufraw contrast" >> /etc/portage/package.use
-echo "media-gfx/imagemagick corefonts hdri" >> /etc/portage/package.use
+echo "media-gfx/imagemagick corefonts hdri fpx" >> /etc/portage/package.use
 echo "mate-base/mate-applets-meta sensors" >> /etc/portage/package.use
 echo "mate-extra/caja-extensions image-converter -cdr" >> /etc/portage/package.use
 echo "mate-extra/mate-utils applet" >> /etc/portage/package.use
