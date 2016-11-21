@@ -12,3 +12,7 @@ cp /home/backup/scripts/gentoo/fstab /etc/fstab
 
 # Para compilar o kernel
 genkernel all
+
+# Instalando o firmware
+echo "sys-kernel/linux-firmware ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av sys-kernel/linux-firmware

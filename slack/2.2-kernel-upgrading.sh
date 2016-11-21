@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=4.8.1
-OLD_LIB=4.8.1
-NEW=4.8.3
+OLD=4.8.8
+OLD_LIB=4.8.8
+NEW=4.8.9
 
 # Compilando o novo kernel
 cd /home/backup/kernel

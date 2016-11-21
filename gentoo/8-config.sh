@@ -18,7 +18,6 @@ echo clock='"local"' > /etc/conf.d/hwclock
 
 # Instalando Filesystem Tools
 emerge -av sys-fs/xfsprogs
-emerge -av sys-fs/reiserfsprogs
 emerge -av sys-fs/jfsutils
 emerge -av sys-fs/dosfstools
 emerge -av sys-fs/f2fs-tools

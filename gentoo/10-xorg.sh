@@ -2,14 +2,17 @@
 
 # Instalando o Xorg
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
-echo "media-libs/mesa gles1 xa -vaapi" >> /etc/portage/package.use
+echo "media-libs/mesa gles1 xa d3d9 -vaapi" >> /etc/portage/package.use
 echo "sys-devel/llvm -static-analyzer" >> /etc/portage/package.use
 echo "x11-terms/xterm toolbar" >> /etc/portage/package.use
 echo "x11-libs/cairo xlib-xcb" >> /etc/portage/package.use
 echo "x11-libs/libdrm libkms" >> /etc/portage/package.use
 echo "x11-apps/mesa-progs egl" >> /etc/portage/package.use
-echo "x11-drivers/nvidia-drivers gtk3" >> /etc/portage/package.use
+echo "x11-drivers/nvidia-drivers gtk2" >> /etc/portage/package.use
+echo "app-arch/libarchive lz4" >> /etc/portage/package.use
+echo "dev-scheme/guile networking" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
+
 emerge -av --verbose x11-base/xorg-drivers
 emerge -av x11-apps/mesa-progs
 emerge -av x11-base/xorg-server
@@ -23,11 +26,15 @@ eselect opengl set nvidia
 eselect opencl set nvidia
 
 # Instalando fontes
+echo "media-fonts/droid ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/droid
 echo "media-fonts/roboto ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/roboto
+echo "media-fonts/ubuntu-font-family ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/ubuntu-font-family
 echo "media-fonts/corefonts tahoma" >> /etc/portage/package.use
+echo "media-fonts/corefonts ~amd64" >> /etc/portage/package.accept_keywords
+echo "media-fonts/liberation-fonts ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/corefonts
 emerge -av media-fonts/liberation-fonts
 
