@@ -44,7 +44,7 @@ emerge -av xfce-extra/tumbler
 echo "Xcursor.theme: Vanilla-DMZ" > /home/eric/.Xresources
 
 # Adicionando grupos para o usuário no X
-for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
+for x in cdrom audio cdrw disk sys sudo portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 
 # Adicionando o xfce4 para iniciar
@@ -55,4 +55,4 @@ echo "exec ck-launch-session startxfce4" > /home/eric/.xsession
 # Habilitando o consolekit e dbus no init
 rc-update add consolekit default
 rc-update add dbus default
-rc-update add acpid default
+# rc-update add acpid default

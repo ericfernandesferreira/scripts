@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=4.8.2
-NEW=4.8.4
+OLD=4.9.5
+NEW=4.9.6
 
 # Trocando o kernel default para o novo
 eselect kernel set 2

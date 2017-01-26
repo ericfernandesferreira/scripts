@@ -32,8 +32,8 @@ echo "sync-type = git" >> /etc/portage/repos.conf/steam-overlay.conf
 echo "sync-uri = https://github.com/anyc/steam-overlay/" >> /etc/portage/repos.conf/steam-overlay.conf
 echo "auto-sync = Yes" >> /etc/portage/repos.conf/steam-overlay.conf
 
-echo "=games-util/steam-launcher-1.0.0.52 **" >> /etc/portage/package.accept_keywords
-echo "=games-util/steam-client-meta-0-r20160502 **" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-launcher ~amd64" >> /etc/portage/package.accept_keywords
+echo "games-util/steam-client-meta ~amd64" >> /etc/portage/package.accept_keywords
 echo "games-util/steam-meta ~amd64" >> /etc/portage/package.accept_keywords
 echo "games-util/steam-games-meta ~amd64" >> /etc/portage/package.accept_keywords
 
@@ -63,6 +63,12 @@ emerge -av net-p2p/qbittorrent
 echo "media-video/vlc ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/vlc qt5" >> /etc/portage/package.use
 emerge -av media-video/vlc
+
+# OBS-Studio
+echo "media-video/obs-studio ~amd64" >> /etc/portage/package.accept_keywords
+echo "dev-qt/qtmultimedia widgets" >> /etc/portage/package.use
+echo "media-video/obs-studio fdk -imagemagick" >> /etc/portage/package.use
+emerge -av media-video/obs-studio
 
 # Skype
 echo "net-im/skype ~amd64" >> /etc/portage/package.accept_keywords

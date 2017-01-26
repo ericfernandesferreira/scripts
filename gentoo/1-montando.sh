@@ -6,7 +6,8 @@ mount /dev/sda5 /mnt/gentoo
 mkdir -p /mnt/gentoo/boot/efi
 mkdir -p /mnt/gentoo/home/backup
 mkdir -p /mnt/gentoo/home/games
-mkdir -p /mnt/gentoo/home/hd
+mkdir -p /mnt/gentoo/home/hd1
+mkdir -p /mnt/gentoo/home/hd2
 
 # Montando as particoes
 mount /dev/sda1 /mnt/gentoo/boot/efi

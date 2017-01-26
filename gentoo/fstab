@@ -4,4 +4,5 @@
 /dev/sda6		/		ext4		defaults,discard,noatime	1	1
 /dev/sda3		/home/backup	ext4		defaults,discard,noatime	1	2
 /dev/sda4		/home/games	ext4		defaults,discard,noatime	1	2
-/dev/sdb1		/home/hd	ntfs-3g		fmask=111,dmask=000		1	0
+/dev/sdb1		/home/hd1	ntfs-3g		fmask=111,dmask=000		1	0
+/dev/sdc1		/home/hd2	ntfs-3g		fmask=111,dmask=000		1       0

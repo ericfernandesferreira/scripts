@@ -37,7 +37,6 @@ echo "x11-themes/mate-backgrounds ~amd64" >> /etc/portage/package.accept_keyword
 echo "x11-wm/marco ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-libs/libmatemixer ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-gfx/eom ~amd64" >> /etc/portage/package.accept_keywords
-echo "net-analyzer/mate-netspeed ~amd64" >> /etc/portage/package.accept_keywords
 echo "x11-terms/mate-terminal ~amd64" >> /etc/portage/package.accept_keywords
 echo "x11-misc/mozo ~amd64" >> /etc/portage/package.accept_keywords
 echo "x11-misc/mate-notification-daemon" >> /etc/portage/package.accept_keywords
@@ -45,7 +44,7 @@ echo "x11-misc/mate-notification-daemon" >> /etc/portage/package.accept_keywords
 emerge -av mate-base/mate x11-misc/mozo mate-extra/mate-sensors-applet mate-extra/caja-extensions
 
 # Adicionando grupos para o usuário no X
-for x in cdrom audio cdrw disk sys portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
+for x in cdrom audio cdrw disk sys sudo portage wheel usb video bin daemon input plugdev ; do gpasswd -a eric $x ; done
 env-update && source /etc/profile
 
 # Adicionando o Mate para ser iniciado
@@ -65,4 +64,4 @@ cp /home/backup/scripts/gentoo/index.theme /home/eric/.icons/default
 # Habilitando o consolekit e dbus no init
 rc-update add consolekit default
 rc-update add dbus default
-rc-update add acpid default
+# rc-update add acpid default

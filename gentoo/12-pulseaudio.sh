@@ -7,6 +7,10 @@ echo "default_driver=pulse" > /etc/libao.conf
 mkdir -p /etc/openal
 echo "drivers = pulse" > /etc/openal/alsoft.conf
 
+# mplayer
+mkdir -p /etc/mplayer
+echo "ao=pulse" > /etc/mplayer/mplayer.conf
+
 # gstreamer
 echo "Digite em modo usuário"
 echo "gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosink pulsesink"
