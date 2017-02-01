@@ -64,4 +64,4 @@ cp /home/backup/scripts/gentoo/index.theme /home/eric/.icons/default
 # Habilitando o consolekit e dbus no init
 rc-update add consolekit default
 rc-update add dbus default
-# rc-update add acpid default
+rc-update add acpid default

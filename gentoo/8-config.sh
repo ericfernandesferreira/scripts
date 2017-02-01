@@ -7,7 +7,7 @@ cp /home/backup/scripts/gentoo/make-final.conf /etc/portage/make.conf
 cp /home/backup/scripts/gentoo/keymaps /etc/conf.d/keymaps
 
 # Configuracao do relogio
-echo clock='"local"' > /etc/conf.d/hwclock
+echo clock='"UTC"' > /etc/conf.d/hwclock
 
 # Instalando um System Logger
 # emerge --ask app-admin/syslog-ng
