@@ -2,7 +2,7 @@
 
 OLD=4.9.5
 OLD_LIB=4.9.5
-NEW=4.9.6
+NEW=4.9.10
 
 # Compilando o novo kernel
 cd /home/backup/kernel

@@ -2,7 +2,7 @@
 
 # Instalando o sudo
 echo "app-admin/sudo skey" >> /etc/portage/package.use
-emerge -av app-admin/sudo
+emerge -av app-shells/bash-completion app-admin/sudo
 
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers

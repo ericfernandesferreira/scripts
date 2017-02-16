@@ -5,19 +5,10 @@ echo "media-libs/libcaca -ruby" >> /etc/portage/package.use
 echo "dev-libs/openssl bindist" >> /etc/portage/package.use
 echo "media-libs/mesa gles1 -xa -d3d9 -vaapi -llvm -vdpau -gallium" >> /etc/portage/package.use
 echo "sys-devel/llvm -static-analyzer" >> /etc/portage/package.use
-echo "x11-terms/xterm toolbar Xaw3d" >> /etc/portage/package.use
-echo "x11-libs/cairo xlib-xcb" >> /etc/portage/package.use
-echo "x11-libs/libdrm libkms" >> /etc/portage/package.use
-echo "x11-apps/mesa-progs egl" >> /etc/portage/package.use
-echo "x11-drivers/nvidia-drivers gtk2" >> /etc/portage/package.use
-echo "app-arch/libarchive lz4" >> /etc/portage/package.use
-echo "dev-scheme/guile networking" >> /etc/portage/package.use
 echo "dev-libs/cyrus-sasl -openldap -gdbm" >> /etc/portage/package.use
-echo "net-misc/curl rtmp ssh" >> /etc/portage/package.use
-echo "dev-db/sqlite tools" >> /etc/portage/package.use
-echo "sys-apps/openrc tools" >> /etc/portage/package.use
 echo "sys-libs/gdbm berkdb" >> /etc/portage/package.use
-echo "media-video/nvidia_video_sdk tools" >> /etc/portage/package.use
+
+echo "x11-drivers/nvidia-drivers gtk2" >> /etc/portage/package.use
 echo "x11-drivers/nvidia-drivers ~amd64" >> /etc/portage/package.accept_keywords
 echo "media-video/nvidia_video_sdk ~amd64" >> /etc/portage/package.accept_keywords
 
@@ -26,9 +17,7 @@ emerge -av x11-apps/mesa-progs
 emerge -av x11-base/xorg-server
 env-update && source /etc/profile
 
-# Instalando os drivers Nvidia
-# Para reinstalar o modulo da Nvidia caso mude kernel
-# Digite após compilar o novo kernel "make_prepare" "emerge @module-rebuild"
+# Configurando o Xorg
 nvidia-xconfig --composite --cool-bits=12
 eselect opengl set nvidia
 eselect opencl set nvidia
@@ -38,13 +27,18 @@ echo "media-fonts/droid ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/droid
 echo "media-fonts/roboto ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/roboto
+echo "media-fonts/noto ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av media-fonts/noto
 echo "media-fonts/ubuntu-font-family ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/ubuntu-font-family
-echo "media-fonts/corefonts tahoma" >> /etc/portage/package.use
+echo "media-fonts/dejavu ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av media-fonts/dejavu
 echo "media-fonts/corefonts ~amd64" >> /etc/portage/package.accept_keywords
-echo "media-fonts/liberation-fonts ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/corefonts
+echo "media-fonts/liberation-fonts ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av media-fonts/liberation-fonts
+echo "media-fonts/urw-fonts ~amd64" >> /etc/portage/package.accept_keywords
+emerge -av media-fonts/urw-fonts
 
 # Ajustando para Infinality Fonts
 eselect fontconfig enable 52-infinality.conf

@@ -2,17 +2,18 @@
 
 # Instalando a base do Mate
 echo "sys-block/parted device-mapper" >> /etc/portage/package.use
-echo "x11-libs/libva egl" >> /etc/portage/package.use
 echo "x11-themes/gtk-engines-murrine animation-rtl" >> /etc/portage/package.use
-echo "app-text/atril caja" >> /etc/portage/package.use
 echo "app-text/enchant aspell" >> /etc/portage/package.use
-echo "app-arch/engrampa caja magic" >> /etc/portage/package.use
 echo "media-libs/alsa-lib alisp" >> /etc/portage/package.use
 echo "media-libs/libbluray aacs" >> /etc/portage/package.use
-echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
 echo "media-gfx/ufraw contrast" >> /etc/portage/package.use
 echo "media-gfx/imagemagick corefonts hdri fpx" >> /etc/portage/package.use
+echo "media-libs/gst-plugins-bad -gles2" >> /etc/portage/package.use
+echo "media-libs/libsdl2 gles" >> /etc/portage/package.use
+echo "gnome-base/gvfs archive" >> /etc/portage/package.use
+echo "app-arch/engrampa caja magic" >> /etc/portage/package.use
 echo "mate-base/mate-applets-meta sensors" >> /etc/portage/package.use
+echo "app-text/atril caja" >> /etc/portage/package.use
 echo "mate-extra/caja-extensions image-converter -cdr" >> /etc/portage/package.use
 echo "mate-extra/mate-utils applet" >> /etc/portage/package.use
 echo "mate-extra/mate-sensors-applet VIDEO_CARDS: -nvidia" >> /etc/portage/package.use
