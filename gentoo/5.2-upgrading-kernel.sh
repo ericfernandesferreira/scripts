@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=4.9.8-gentoo
-NEW=4.9.9-gentoo
+OLD=4.9.9-gentoo
+NEW=4.9.10-gentoo
 
 # Trocando o kernel default para o novo
 eselect kernel set 2

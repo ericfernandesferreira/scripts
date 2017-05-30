@@ -56,7 +56,7 @@ echo "dev-qt/qtlockedfile qt5" >> /etc/portage/package.use
 echo "dev-qt/qtsingleapplication qt5" >> /etc/portage/package.use
 echo "net-p2p/qbittorrent qt5 -qt4" >> /etc/portage/package.use
 echo "net-p2p/qbittorrent ~amd64" >> /etc/portage/package.accept_keywords
-echo "net-libs/rb_libtorrent ~amd64" >> /etc/portage/package.accept_keywords
+echo "net-libs/libtorrent-rasterbar ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av net-p2p/qbittorrent
 
 # vlc

@@ -28,3 +28,4 @@ echo "gparted" >> /etc/slackpkg/blacklist
 echo "gst-plugins-good" >> /etc/slackpkg/blacklist
 echo "gst-plugins-good0" >> /etc/slackpkg/blacklist
 echo "MPlayer" >> /etc/slackpkg/blacklist
+echo "nasm" >> /etc/slackpkg/blacklist

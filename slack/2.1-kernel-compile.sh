@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OLD=4.4.14
-NEW=4.9.6
+NEW=4.11.3
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -18,7 +18,6 @@ cp System.map /boot/System.map-$NEW
 cp .config /boot/config-$NEW
 cd arch/x86_64/boot
 cp bzImage /boot/vmlinuz-$NEW
-# cp -a /etc/rc.d/rc.modules-$OLD /etc/rc.d/rc.modules-$NEW
 
 # Removendo o kernel antigo
 removepkg kernel-generic
