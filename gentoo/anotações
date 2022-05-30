@@ -1,6 +1,0 @@
-## Para compilar o Xorg ##
-
-Estava observando que mesmo a flag não estar habilitada os aplicativos estão sendo instalados mesmo assim, como:
-"crypt"
-"gcrypt"
-

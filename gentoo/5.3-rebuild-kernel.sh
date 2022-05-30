@@ -1,24 +1,19 @@
 #!/bin/sh
 
-# Removendo o Kernel antigo
-# cd /boot
-# rm 
-# 
+VERSION=4.19.0-gentoo
+
+# Removendo o anterior
+rm /boot/config-$VERSION
+rm /boot/System.map-$VERSION
+rm /boot/vmlinuz-$VERSION
+rm -rf /lib/modules/$VERSION
 
 # Recompilando o Kernel
+cp /usr/src/linux/.config /home/backup/kernel/configs/grinder-gentoo
 cd /usr/src/linux
 make mrproper
 cp /home/backup/kernel/configs/grinder-gentoo /usr/src/linux/.config
-make CFLAGS='"-march=haswell -O3 -pipe"' -j5 && make modules_install && make install
+make -j5 && make modules_install && make install
 
 # Atualizando o Grub
-grub2-mkconfig -o /boot/grub/grub.cfg
-
-# Reempacotando
-make modules_prepare
-emerge -av @module-rebuild
-eselect opengl set nvidia
-eselect opencl set nvidia
-
-# Após o kernel novo é bom verificar se existem algum programa do sistema com dependência do novo kernel
-# emerge -av --update --deep --with-bdeps=y --newuse @world
+grub-mkconfig -o /boot/grub/grub.cfg

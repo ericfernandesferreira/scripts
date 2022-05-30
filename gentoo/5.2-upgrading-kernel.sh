@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=4.9.9-gentoo
-NEW=4.9.10-gentoo
+OLD=4.20.0-gentoo
+NEW=4.20.2-gentoo
 
 # Trocando o kernel default para o novo
 eselect kernel set 2
@@ -16,7 +16,7 @@ make oldconfig
 cp .config /home/backup/kernel/configs/grinder-gentoo
 
 # Compilando o novo kernel
-make CFLAGS='"-march=haswell -O3 -pipe"' -j5 && make modules_install && make install
+make -j5 && make modules_install && make install
 make modules_prepare
 emerge -av @module-rebuild
 
@@ -25,11 +25,11 @@ emerge -av --depclean
 cd /usr/src/
 rm -rf linux-$OLD
 cd /lib/modules
-rm -rf $OLD-gr1nder
+rm -rf $OLD
 cd /boot
-rm config-$OLD-gr1nder
-rm System.map-$OLD-gr1nder
-rm vmlinuz-$OLD-gr1nder
+rm config-$OLD
+rm System.map-$OLD
+rm vmlinuz-$OLD
 
 # Gerando o grub com o kernel atualizado
 grub-mkconfig -o /boot/grub/grub.cfg

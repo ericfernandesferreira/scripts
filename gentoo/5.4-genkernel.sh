@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Baixe o source
-echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords
+#echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av sys-kernel/gentoo-sources
 
 # Baixe o genkernel
@@ -14,5 +14,5 @@ cp /home/backup/scripts/gentoo/fstab /etc/fstab
 genkernel all
 
 # Instalando o firmware
-echo "sys-kernel/linux-firmware ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av sys-kernel/linux-firmware
+#echo "sys-kernel/linux-firmware ~amd64" >> /etc/portage/package.accept_keywords
+#emerge -av sys-kernel/linux-firmware

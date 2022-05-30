@@ -20,7 +20,7 @@ echo clock='"local"' > /etc/conf.d/hwclock
 emerge -av sys-fs/xfsprogs
 emerge -av sys-fs/jfsutils
 emerge -av sys-fs/dosfstools
-emerge -av sys-fs/btrfs-progs
+# emerge -av sys-fs/btrfs-progs
 emerge -av sys-fs/f2fs-tools
 emerge -av sys-fs/ntfs3g
 emerge -av sys-fs/e2fsprogs

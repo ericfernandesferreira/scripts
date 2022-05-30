@@ -5,7 +5,7 @@ emerge --sync
 
 # Escolhendo um perfil (Desktop selecionado) Padrao = 1
 eselect profile list
-eselect profile set 3
+eselect profile set 16
 eselect profile list
 
 # Configurando o Timezone

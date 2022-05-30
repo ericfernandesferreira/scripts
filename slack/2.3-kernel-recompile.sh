@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=4.11.3
-VERSION_MODULES=4.11.3
+VERSION=5.18.1
+VERSION_MODULES=5.18.1
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -14,8 +14,10 @@ rm -rf /lib/modules/$VERSION_MODULES
 
 # Compilando o novo kernel
 cd /usr/src/linux-$VERSION
-make clean
-make CFLAGS='"-O3 -march=haswell"' -j5 bzImage &&  make CFLAGS='"-O3 -march=haswell"' -j5 modules && make CFLAGS='"-O3 -march=haswell"' -j5 modules_install
+cp .config /home/backup/kernel/configs/grinder-slackware
+make mrproper
+cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
+make -j17 bzImage && make -j17 modules && make modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$VERSION

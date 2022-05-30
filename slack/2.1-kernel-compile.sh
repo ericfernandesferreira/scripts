@@ -1,7 +1,14 @@
 #!/bin/sh
 
-OLD=4.4.14
-NEW=4.11.3
+NEW=5.18
+
+# Removendo o kernel antigo
+removepkg kernel-generic
+removepkg kernel-huge
+removepkg kernel-modules
+removepkg kernel-source
+rm -rf /usr/src/linux
+rm /boot/initrd.gz
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -11,20 +18,13 @@ tar xvf linux-$NEW.tar.xz
 rm linux-$NEW.tar.xz
 cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux-$NEW/.config
 cd /usr/src/linux-$NEW
-make CFLAGS='"-O3 -march=haswell -pipe"' -j5 bzImage &&  make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules && make CFLAGS='"-O3 -march=haswell -pipe"' -j5 modules_install
+make -j17 bzImage && make -j17 modules && make modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$NEW
 cp .config /boot/config-$NEW
 cd arch/x86_64/boot
 cp bzImage /boot/vmlinuz-$NEW
-
-# Removendo o kernel antigo
-removepkg kernel-generic
-removepkg kernel-huge
-removepkg kernel-modules
-removepkg kernel-source
-rm -rf /usr/src/linux
 
 # Arrumando os symlinks
 cd /usr/src
@@ -35,6 +35,9 @@ ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
 # mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sda5
+
+# Fazendo com que o GRUB reconheça o Windows
+echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

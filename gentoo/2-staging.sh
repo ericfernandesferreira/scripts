@@ -1,15 +1,15 @@
 #!/bin/sh
 
 # Copiando o Staging para a pasta correta e instalando
-cp /mnt/gentoo/home/backup/scripts/gentoo/stage3-*.tar.bz2 /mnt/gentoo
+cp /mnt/gentoo/home/backup/scripts/gentoo/stage3-*.tar.xz /mnt/gentoo
 cd /mnt/gentoo
-tar xvjpf stage3-*.tar.bz2 --xattrs
-rm stage3-*.tar.bz2
+tar xvf stage3-*.tar.xz --xattrs
+rm stage3-*.tar.xz
 
 # Arrumando o /etc/portage/
 cd /mnt/gentoo/etc/portage/
 rm -rf package.use
-echo "net-misc/iputils -caps -filecaps" >> /mnt/gentoo/etc/portage/package.use
+echo "net-misc/iputils -caps -filecaps -nettle" >> /mnt/gentoo/etc/portage/package.use
 cd /mnt/gentoo/
 cp /mnt/gentoo/home/backup/scripts/gentoo/make-install.conf /mnt/gentoo/etc/portage/make.conf
 
