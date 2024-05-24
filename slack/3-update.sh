@@ -40,7 +40,7 @@ removepkg xf86-video-sisusb xf86-video-tdfx xf86-video-tga xf86-video-trident
 removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
 # Instalando o slackpkg+
-installpkg configs/slackpkg+-1.8.0-noarch-6mt.txz
+installpkg configs/slackpkg+-1.8.0-noarch-7mt.txz
 
 # Atualizando o mirrors do slackpkg (Current)
 cp configs/mirrors /etc/slackpkg/mirrors

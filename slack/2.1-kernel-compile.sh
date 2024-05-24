@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NEW=5.18
+NEW=6.9.1
 
 # Removendo o kernel antigo
 removepkg kernel-generic

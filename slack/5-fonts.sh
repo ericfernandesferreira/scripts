@@ -3,7 +3,7 @@
 # Script que instala fontes webcore
 cd /usr/share/fonts/TTF
 tar xvf /home/backup/scripts/slack/configs/webcore-fonts.tar.gz
-rm /etc/fonts/conf.d/60-liberation.conf
+#rm /etc/fonts/conf.d/60-liberation.conf
 
 # Script que adiciona rgb e subpixel nas fontes
 cd /etc/fonts/conf.d
