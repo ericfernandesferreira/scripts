@@ -1,3 +1,3 @@
-Esses são meus scripts pessoais de instalação de algumas distros para o desktop equipado com AMD Ryzen AM4+
+Esses são meus scripts pessoais de instalação de algumas distros para o laptop Asus TUF Dash F15
 
-This is my scripts to install some others linux for desktop using AMD Ryzen AM4+
+This is my scripts to install some others linux for notebook Asus TUF Dash F15

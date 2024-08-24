@@ -1,6 +1,9 @@
 #!/bin/sh
 
-NEW=6.9.1
+NEW=6.10.6
+
+# Instalando o intel-microcode
+# upgradepkg --reinstall --install-new configs/intel-microcode-20220510-noarch-1_SBo.tgz
 
 # Removendo o kernel antigo
 removepkg kernel-generic
@@ -18,7 +21,7 @@ tar xvf linux-$NEW.tar.xz
 rm linux-$NEW.tar.xz
 cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux-$NEW/.config
 cd /usr/src/linux-$NEW
-make -j17 bzImage && make -j17 modules && make modules_install
+make -j9 bzImage && make -j9 modules && make modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$NEW
@@ -34,7 +37,7 @@ ln -s /boot/config-$NEW /boot/config
 ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sda5
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
 
 # Fazendo com que o GRUB reconheça o Windows
 echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub

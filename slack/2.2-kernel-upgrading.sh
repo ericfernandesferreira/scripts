@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=6.8.1
-OLD_LIB=6.8.1
-NEW=6.9.1
+OLD=5.18.10
+OLD_LIB=5.18.10
+NEW=5.18.11
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -16,7 +16,7 @@ cd /usr/src/linux
 cp /usr/src/linux-$OLD/.config /usr/src/linux-$NEW/.config
 make oldconfig
 cp .config /home/backup/kernel/configs/grinder-slackware
-make -j17 bzImage && make -j17 modules && make modules_install
+make -j9 bzImage && make -j9 modules && make modules_install
 
 # Arrumando os symlinks
 cp System.map /boot/System.map-$NEW
@@ -41,7 +41,7 @@ cd /usr/src
 rm -rf linux-$OLD
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sda5
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

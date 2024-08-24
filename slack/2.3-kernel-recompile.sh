@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=6.9.1
-VERSION_MODULES=6.9.1
+VERSION=5.18.10
+VERSION_MODULES=5.18.10
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -16,8 +16,8 @@ rm -rf /lib/modules/$VERSION_MODULES
 cd /usr/src/linux-$VERSION
 cp .config /home/backup/kernel/configs/grinder-slackware
 make mrproper
-cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux-$VERSION/.config
-make -j17 bzImage && make -j17 modules && make modules_install
+cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
+make -j9 bzImage && make -j9 modules && make modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$VERSION
@@ -31,7 +31,7 @@ ln -s /boot/config-$VERSION /boot/config
 ln -s /boot/vmlinuz-$VERSION /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $VERSION -m ext4 -f ext4 -r /dev/sda5
+# mkinitrd -c -k $VERSION -m ext4 -f ext4 -r /dev/nvme0n1p6
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

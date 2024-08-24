@@ -72,7 +72,7 @@
 # http://mirror.datacenter.by/pub/slackware/slackware64-15.0/
 # BRAZIL (BR)
 # ftp://ftp.slackware-brasil.com.br/slackware64-15.0/
-# http://ftp.slackware-brasil.com.br/slackware64-15.0/
+http://ftp.slackware-brasil.com.br/slackware64-15.0/
 # BULGARIA (BG)
 # ftp://mirrors.unixsol.org/slackware/slackware64-15.0/
 # http://mirrors.unixsol.org/slackware/slackware64-15.0/
@@ -170,7 +170,7 @@
 # ftp://mirrors.mithril.org.ua/linux/slackware/slackware64-15.0/
 # http://mirrors.mithril.org.ua/linux/slackware/slackware64-15.0/
 # UNITED KINGDOM (UK)
-http://slackware.uk/slackware/slackware64-15.0/
+# http://slackware.uk/slackware/slackware64-15.0/
 # ftp://slackware.uk/slackware/slackware64-15.0/
 # ftp://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/
 # http://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/

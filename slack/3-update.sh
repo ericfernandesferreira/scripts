@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Connectando numa rede Wifi
+nmcli device wifi connect "EricNet @5ghz" password 0097079248
+
 # Script que atualiza e remove algumas coisas
 
 # Removendo aplicativos
