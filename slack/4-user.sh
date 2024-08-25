@@ -21,6 +21,7 @@ echo "audacious-plugins" >> /etc/slackpkg/blacklist
 echo "gimp" >> /etc/slackpkg/blacklist
 echo "gparted" >> /etc/slackpkg/blacklist
 echo "libva" >> /etc/slackpkg/blacklist
+echo "libva-utils" >> /etc/slackpkg/blacklist
 echo "MPlayer" >> /etc/slackpkg/blacklist
 echo "meson" >> /etc/slackpkg/blacklist
 echo "ffmpeg" >> /etc/slackpkg/blacklist
