@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Connectando numa rede Wifi
-nmcli device wifi connect "EricNet @5ghz" password 0097079248
+# nmcli device wifi connect "EricNet @5ghz" password 0097079248
 
 # Script que atualiza e remove algumas coisas
 
@@ -11,9 +11,11 @@ removepkg ed elilo elvis floppy lilo mt-st mtx nvi rpm2tgz
 # AP
 removepkg amp dc3dd hplip jed joe jove ksh93 madplay mc moc
 removepkg most radeontool soma undervolt zsh
+# D
+removepkg distcc
 # L
-removepkg QtAV fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
-removepkg libdbusmenu-qt libdiscid libdmtx libfakekey libgnt libkarma
+removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
+removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
 removepkg gst-plugins-bad-free
 # N
