@@ -16,7 +16,6 @@ slackpkg install bash-completion
 
 # Arrumando o blacklist do slackpkg
 echo "[0-9]+_xsb" >> /etc/slackpkg/blacklist
-echo "aom" >> /etc/slackpkg/blacklist
 echo "audacious" >> /etc/slackpkg/blacklist
 echo "audacious-plugins" >> /etc/slackpkg/blacklist
 echo "gimp" >> /etc/slackpkg/blacklist
