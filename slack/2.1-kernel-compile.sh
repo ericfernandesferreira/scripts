@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NEW=6.10.6
+NEW=6.10.7
 
 # Instalando o intel-microcode
 # upgradepkg --reinstall --install-new configs/intel-microcode-20220510-noarch-1_SBo.tgz

@@ -12,7 +12,7 @@ removepkg ed elilo elvis floppy lilo mt-st mtx nvi rpm2tgz
 removepkg amp cdrdao cdrtools dc3dd hplip jed joe jove ksh93
 removepkg madplay mc moc most radeontool soma undervolt zsh
 # D
-removepkg distcc
+removepkg distcc nv-codec-headers
 # L
 removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
 removepkg libdiscid libdmtx libfakekey libgnt libkarma

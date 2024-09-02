@@ -16,12 +16,14 @@ slackpkg install bash-completion
 
 # Arrumando o blacklist do slackpkg
 echo "[0-9]+_xsb" >> /etc/slackpkg/blacklist
+echo "aom" >> /etc/slackpkg/blacklist
 echo "audacious" >> /etc/slackpkg/blacklist
 echo "audacious-plugins" >> /etc/slackpkg/blacklist
 echo "gimp" >> /etc/slackpkg/blacklist
 echo "gparted" >> /etc/slackpkg/blacklist
 echo "MPlayer" >> /etc/slackpkg/blacklist
 echo "mpv" >> /etc/slackpkg/blacklist
+echo "nv-codec-headers" >> /etc/slackpkg/blacklist
 echo "ffmpeg" >> /etc/slackpkg/blacklist
 echo "fluidsynth" >> /etc/slackpkg/blacklist
 echo "openal-soft" >> /etc/slackpkg/blacklist
