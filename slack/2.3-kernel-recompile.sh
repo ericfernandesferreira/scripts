@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=6.10.6
-VERSION_MODULES=6.10.6
+VERSION=6.11.3
+VERSION_MODULES=6.11.3
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -17,7 +17,7 @@ cd /usr/src/linux-$VERSION
 cp .config /home/backup/kernel/configs/grinder-slackware
 make mrproper
 cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
-make -j9 bzImage && make -j9 modules && make modules_install
+make -j17 bzImage && make -j17 modules && make modules_install
 
 # Copiando arquivos do novo kernel
 cp System.map /boot/System.map-$VERSION
