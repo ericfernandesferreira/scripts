@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NEW=6.9.1
+NEW=6.11.3
 
 # Removendo o kernel antigo
 removepkg kernel-generic
@@ -34,10 +34,7 @@ ln -s /boot/config-$NEW /boot/config
 ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/sda5
-
-# Fazendo com que o GRUB reconheça o Windows
-echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

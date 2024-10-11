@@ -6,13 +6,15 @@
 # A
 removepkg ed elilo elvis floppy lilo mt-st mtx nvi rpm2tgz
 # AP
-removepkg amp dc3dd hplip jed joe jove ksh93 madplay mc moc
-removepkg most radeontool soma undervolt zsh
+removepkg amp cdrdao cdrtools dc3dd hplip jed joe jove ksh93
+removepkg madplay mc moc most radeontool soma undervolt zsh
+# D
+removepkg distcc nv-codec-headers
 # L
-removepkg QtAV fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
-removepkg libdbusmenu-qt libdiscid libdmtx libfakekey libgnt libkarma
+removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
+removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
-removepkg gst-plugins-bad-free
+removepkg gst-plugins-bad-free pipewire
 # N
 removepkg alpine biff+comsat bootp elm epic5 htdig ipw2100-fw
 removepkg ipw2200-fw irssi links ncftp netatalk nmap nn
@@ -21,14 +23,13 @@ removepkg ytalk zd1211-firmware
 # T
 removepkg fig2dev xfig
 # X
-removepkg OpenCC anthy fcitx-anthy fcitx-configtool fcitx-hangul
-removepkg fcitx-kkc fcitx-libpinyin fcitx-m17n fcitx-qt5 fcitx-sayura
-removepkg fcitx-table-extra fcitx-table-other fcitx-unikey fcitx
+removepkg OpenCC anthy fcitx5 fcitx5-anthy fcitx5-chinese-addons
+removepkg fcitx5-gtk fcitx5-hangul fcitx5-kkc fcitx5-m17n fcitx5-qt
 removepkg ibus-anthy ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n
 removepkg ibus-table ibus-unikey ibus libkkc-data libkkc libpinyin
 removepkg motif sazanami-fonts-ttf sinhala_lklug-font-ttf skkdic
 removepkg tibmachuni-font-ttf ttf-indic-fonts ttf-tlwg wqy-zenhei-font-ttf
-removepkg xf86-input-acecad xf86-input-aiptek xf86-input-void
+removepkg xinput_calibrator xf86-input-acecad xf86-input-aiptek xf86-input-void
 removepkg xf86-video-amdgpu xf86-video-apm xf86-video-ark xf86-video-ast
 removepkg xf86-video-ati xf86-video-cirrus xf86-video-dummy xf86-video-geode
 removepkg xf86-video-glint xf86-video-i128 xf86-video-i740 xf86-video-mach64
@@ -41,6 +42,7 @@ removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
 # Instalando o slackpkg+
 installpkg configs/slackpkg+-1.8.0-noarch-7mt.txz
+cp configs/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf
 
 # Atualizando o mirrors do slackpkg (Current)
 cp configs/mirrors /etc/slackpkg/mirrors

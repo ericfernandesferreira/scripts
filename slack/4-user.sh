@@ -21,7 +21,8 @@ echo "audacious-plugins" >> /etc/slackpkg/blacklist
 echo "gimp" >> /etc/slackpkg/blacklist
 echo "gparted" >> /etc/slackpkg/blacklist
 echo "MPlayer" >> /etc/slackpkg/blacklist
-echo "manson" >> /etc/slackpkg/blacklist
+echo "mpv" >> /etc/slackpkg/blacklist
+echo "nv-codec-headers" >> /etc/slackpkg/blacklist
 echo "ffmpeg" >> /etc/slackpkg/blacklist
 echo "fluidsynth" >> /etc/slackpkg/blacklist
 echo "openal-soft" >> /etc/slackpkg/blacklist

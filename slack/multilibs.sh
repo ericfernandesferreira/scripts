@@ -1,6 +1,11 @@
 #!/bin/sh
 
-# Instalando o multilibs
-cd /home/backup/slackware/multilibs
-upgradepkg --reinstall --install-new *.t?z
-upgradepkg --install-new slackware64-compat32/*-compat32/*.t?z
+# Baixando multilibs para o Slackware64 Current
+cd /home/backup/slackware
+rm -rf multilibs-current
+lftp -c 'open http://slackware.nl/people/alien/multilib/ ; mirror -c -e current'
+mv current multilibs-current
+cd multilibs-current
+
+# Instalando multilibs para o Slackware64 Current
+sudo upgradepkg --install-new slackware64-compat32/*-compat32/*.t?z
