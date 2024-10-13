@@ -1,16 +1,13 @@
 #!/bin/sh
 
-# Baixe o source
+# Baixe o kernel compilado
+emerge -av sys-kernel/gentoo-kernel-bin
+emerge -av sys-kernel/installkernel
+
+# Baixe o kernel source
 echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords/gentoo-sources
 echo "sys-kernel/linux-firmware ~amd64" >> /etc/portage/package.accept_keywords/linux-firmware
 emerge -av sys-kernel/gentoo-sources
-ln -s /usr/src/linux-6.11.3-gentoo /usr/src/linux
-
-# Baixe o genkernel
-emerge -av sys-kernel/genkernel
 
 # Copiando o fstab para poder usar o genkernel
 cp /home/backup/scripts/gentoo/fstab /etc/fstab
-
-# Para compilar o kernel
-genkernel all

@@ -8,6 +8,6 @@ mkdir -p /mnt/gentoo/home/backup
 mkdir -p /mnt/gentoo/home/hd
 
 # Montando as partições
-mount /dev/sda1 /mnt/gentoo/boot/efi
+mount /dev/nvme0n1p1 /mnt/gentoo/boot/efi
 swapon /dev/sda2
 mount /dev/sda4 /mnt/gentoo/home/backup

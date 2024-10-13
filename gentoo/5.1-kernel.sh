@@ -8,7 +8,7 @@ emerge -av sys-kernel/gentoo-sources
 # Compilando o kernel
 cp /home/backup/kernel/configs/grinder-gentoo /usr/src/linux/.config
 cd /usr/src/linux
-make -j5 && make modules_install && make install
+make -j17 && make modules_install && make install
 
 # Arrumando o fstab
 cp /home/backup/scripts/gentoo/fstab /etc/fstab

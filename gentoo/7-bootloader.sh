@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Instalando o GRUB
-echo "sys-boot/grub mount -truetype -themes -fonts" >> /etc/portage/package.use
+echo "sys-boot/grub mount -truetype -themes -fonts" >> /etc/portage/package.use/grub
 emerge -av sys-boot/grub sys-boot/os-prober
 
 # Configurando o GRUB

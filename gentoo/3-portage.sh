@@ -19,7 +19,7 @@ echo "pt_BR ISO-8859-1" >> /etc/locale.gen
 echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 eselect locale list
-eselect locale set 8
+eselect locale set 9
 eselect locale list
 
 env-update && source /etc/profile
