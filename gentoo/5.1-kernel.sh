@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # Baixando o source
-echo "# Kernel" >> /etc/portage/package.accept_keywords
-echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords
+echo "sys-kernel/gentoo-sources ~amd64" >> /etc/portage/package.accept_keywords/gentoo-sources
 emerge -av sys-kernel/gentoo-sources
 
 # Compilando o kernel

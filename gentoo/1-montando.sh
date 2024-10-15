@@ -9,5 +9,5 @@ mkdir -p /mnt/gentoo/home/hd
 
 # Montando as partições
 mount /dev/nvme0n1p1 /mnt/gentoo/boot/efi
-swapon /dev/sda2
+swapon /dev/sda1
 mount /dev/sda4 /mnt/gentoo/home/backup
