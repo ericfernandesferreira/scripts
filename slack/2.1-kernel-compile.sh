@@ -1,10 +1,9 @@
 #!/bin/sh
 
-NEW=6.11.3
+NEW=6.11.4
 
 # Removendo o kernel antigo
 removepkg kernel-generic
-removepkg kernel-huge
 removepkg kernel-modules
 removepkg kernel-source
 rm -rf /usr/src/linux

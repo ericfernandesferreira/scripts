@@ -7,9 +7,7 @@ tar xvf stage3-*.tar.xz --xattrs
 rm stage3-*.tar.xz
 
 # Arrumando o /etc/portage/
-cd /mnt/gentoo/etc/portage/
 echo "net-misc/iputils -caps -filecaps -nettle" >> /mnt/gentoo/etc/portage/package.use/iputils
-cd /mnt/gentoo/
 cp /mnt/gentoo/home/backup/scripts/gentoo/make-install.conf /mnt/gentoo/etc/portage/make.conf
 
 # Copiando as informacoes de DNS

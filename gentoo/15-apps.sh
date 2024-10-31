@@ -1,83 +1,68 @@
 #!/bin/sh
 
-# Audacious
-emerge -av media-sound/audacious
+mkdir -p /etc/portage/package.use/apps
 
 # Unrar
-echo "app-arch/unrar ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av app-arch/unrar
 
 # p7zip
-echo "app-arch/p7zip ~amd64" >> /etc/portage/package.accept_keywords
-echo "app-arch/p7zip -wxwidgets" >> /etc/portage/package.use
+echo "app-arch/p7zip -wxwidgets" > /etc/portage/package.use/apps/p7zip
 emerge -av app-arch/p7zip
 
 # GParted
-echo "sys-block/gparted ~amd64" >> /etc/portage/package.accept_keywords
 emerge -av sys-block/gparted
 
-# Screenfetch
-emerge -av app-misc/screenfetch
+# NeoFetch
+emerge -av app-misc/neofetch
 
 # Git
 emerge -av dev-vcs/git
 emerge -av dev-ruby/git
 
-# Firefox
-echo "www-client/firefox custom-optimization eme-free system-harfbuzz system-icu system-jpeg system-libvpx -gmp-autoupdate" >> /etc/portage/package.use
-emerge -av www-client/firefox
+# Firefox-bin
+echo "www-client/firefox-bin -gmp-autoupdate" > /etc/portage/package.use/apps/firefox-bin
+emerge -av www-client/firefox-bin
 
 # Google Chrome
-echo "app-text/ghostscript cups" >> /etc/portage/package.use
-echo "www-client/google-chrome ~amd64" >> /etc/portage/package.accept_keywords
+echo "www-client/google-chrome -qt5 -qt6" > /etc/portage/package.use/apps/google-chrome
 emerge -av www-client/google-chrome
 
-# Steam
-mkdir -p /etc/portage/repos.conf
-echo "[steam-overlay]" > /etc/portage/repos.conf/steam-overlay.conf
-echo "location = /usr/local/steam-overlay/" >> /etc/portage/repos.conf/steam-overlay.conf
-echo "sync-type = git" >> /etc/portage/repos.conf/steam-overlay.conf
-echo "sync-uri = https://github.com/anyc/steam-overlay/" >> /etc/portage/repos.conf/steam-overlay.conf
-echo "auto-sync = Yes" >> /etc/portage/repos.conf/steam-overlay.conf
+# Discord
+emerge -av net-im/discord
 
-echo "games-util/steam* ~amd64" >> /etc/portage/package.accept_keywords
-echo "games-util/steam-client-meta steamfonts streaming trayicon" >> /etc/portage/package.use
-emerge -av steam-meta
-
-# qBittorrent
-echo "dev-qt/qtgui:5 egl" >> /etc/portage/package.use
-echo "dev-qt/qtlockedfile qt5" >> /etc/portage/package.use
-echo "dev-qt/qtsingleapplication qt5" >> /etc/portage/package.use
-echo "net-p2p/qbittorrent qt5" >> /etc/portage/package.use
-echo "dev-qt/* ~amd64" >> /etc/portage/package.accept_keywords
-echo "net-p2p/qbittorrent ~amd64" >> /etc/portage/package.accept_keywords
-echo "net-libs/libtorrent-rasterbar ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av net-p2p/qbittorrent
-
-# OBS-Studio
-echo "dev-qt/qtmultimedia widgets" >> /etc/portage/package.use
-echo "media-video/obs-studio -imagemagick" >> /etc/portage/package.use
-emerge -av media-video/obs-studio
-
-# VLC
-echo "media-video/vlc qt5 -vdpau" >> /etc/portage/package.use
-emerge -av media-video/vlc
-
-# TeamViewer
-echo "dev-qt/qtwebkit multimedia orientation webchannel -gstreamer" >> /etc/portage/package.use
-echo "net-misc/teamviewer ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av net-misc/teamviewer
-rc-update add teamviewerd11 default
-
-# Skype
-echo "net-im/skypeforlinux ~amd64" >> /etc/portage/package.accept_keywords
-emerge -av net-im/skypeforlinux
+# Flatpak
+echo "dev-util/ostree archive gnutls grub libmount" > /etc/portage/package.use/apps/ostree
+echo "sys-apps/xdg-desktop-portal flatpak" > /etc/portage/package.use/apps/xdg-desktop-portal
+emerge -av sys-apps/flatpak sys-apps/xdg-desktop-portal
 
 # Gimp
-#emerge -av media-gfx/gimp
+echo "media-libs/libmypaint gegl" > /etc/portage/package.use/apps/libmypaint
+echo "media-gfx/exiv2 webready" > /etc/portage/package.use/apps/exiv2
+echo "media-libs/gegl ffmpeg sdl2" > /etc/portage/package.use/apps/gegl
+echo "media-libs/libde265 dec265 enc265" > /etc/portage/package.use/apps/libde265
+echo "media-libs/libheif x265" > /etc/portage/package.use/apps/libheif
+echo "media-gfx/gimp heif xpm" > /etc/portage/package.use/apps/gimp
+emerge -av media-gfx/gimp
 
-# LibreOffice
-#emerge -av app-office/libreoffice
+# qBittorrent
+echo "net-p2p/qbittorrent -qt6" > /etc/portage/package.use/apps/qbittorrent
+echo "dev-qt/qtwayland compositor" > /etc/portage/package.use/apps/qtwayland
+echo "dev-qt/qtnetwork libproxy" > /etc/portage/package.use/apps/qtnetwork
+emerge -av net-p2p/qbittorrent
+
+# MPV & Smplayer
+echo "media-video/mpv -uchardet archive nvenc openal sdl vdpau" > /etc/portage/package.use/apps/mpv
+emerge -av media-video/mpv media-video/smplayer x11-themes/smplayer-themes 
+
+# OBS-Studio
+echo "media-video/obs-studio ~amd64" > /etc/portage/package.accept_keywords/obs-studio
+echo "dev-qt/qtmultimedia widgets" > /etc/portage/package.use/apps/
+echo "media-video/obs-studio -imagemagick" > /etc/portage/package.use/apps/
+emerge -av media-video/obs-studio
+
+# WPS Office
+echo "app-office/wps-office ~amd64" > /etc/portage/package.accept_keywords/wps-office
+emerge -av app-office/wps-office
 
 # VirtualBox
 #echo "app-emulation/virtualbox ~amd64" >> /etc/portage/package.accept_keywords
@@ -92,17 +77,6 @@ emerge -av net-im/skypeforlinux
 #echo modules='"vboxdrv vboxnetflt vboxnetadp"' >> /etc/conf.d/modules
 #gpasswd -a eric vboxusers
 
-# Dolphin
-#echo "=games-emulation/dolphin-9999 **" >> /etc/portage/package.accept_keywords
-#echo "net-libs/mbedtls ~amd64" >> /etc/portage/package.accept_keywords
-#echo "net-libs/enet ~amd64" >> /etc/portage/package.accept_keywords
-#echo "media-libs/libsfml ~amd64" >> /etc/portage/package.accept_keywords
-#echo "media-libs/libsdl2 haptic gles" >> /etc/portage/package.use
-#echo "net-libs/polarssl havege" >> /etc/portage/package.use
-#emerge -av games-emulation/dolphin
-#gpasswd -a eric games
-#for x in games ; do gpasswd -a eric $x ; done
-
 # Wine
 #echo "=app-emulation/wine-1.7.50 ~amd64" >> /etc/portage/package.accept_keywords
 #echo "app-emulation/wine opencl -gstreamer" >> /etc/portage/package.use
@@ -113,3 +87,10 @@ emerge -av net-im/skypeforlinux
 #echo "app-emulation/winetricks ~amd64" >> /etc/portage/package.accept_keywords
 #echo "net-libs/webkit-gtk -gles2" >> /etc/portage/package.use
 #emerge -av app-emulation/winetricks
+
+# TeamViewer
+#echo "dev-qt/qtwebkit multimedia orientation webchannel -gstreamer" >> /etc/portage/package.use
+#echo "net-misc/teamviewer ~amd64" >> /etc/portage/package.accept_keywords
+#emerge -av net-misc/teamviewer
+#rc-update add teamviewerd11 default
+

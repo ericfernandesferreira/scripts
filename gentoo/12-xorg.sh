@@ -43,5 +43,6 @@ echo "net-misc/curl ssh" > /etc/portage/package.use/curl
 echo "app-crypt/gpgme -qt5 -qt6" > /etc/portage/package.use/gpgme
 echo "gui-libs/gtk colord" > /etc/portage/package.use/gtk4
 echo "app-crypt/pinentry -qt5 -qt6" > /etc/portage/package.use/pinentry
+echo "dev-libs/elfutils lzma" > /etc/portage/package.use/elfutils
 echo "Digite emerge -avuND world"
 env-update && source /etc/profile

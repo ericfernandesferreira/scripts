@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=6.11.3
-VERSION_MODULES=6.11.3
+VERSION=6.11.4
+VERSION_MODULES=6.11.4
 
 # Removendo o kernel antigo
 rm /boot/System.map

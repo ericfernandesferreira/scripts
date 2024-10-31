@@ -11,7 +11,7 @@ emerge --sync
 cp /home/backup/scripts/funtoo/fstab /etc/fstab
 
 # Arrumando o teclado
-echo 'keymap="br-abnt2"' > /etc/conf.d/keymaps
+echo 'keymap="us-acentos"' > /etc/conf.d/keymaps
 
 # Arrumando a localizacao
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
@@ -24,4 +24,4 @@ echo 'clock="local"' > /etc/conf.d/hwclock
 
 # Atualizando o sistema
 emerge --sync
-emerge -auDN @world
+emerge -avuND @world
