@@ -17,7 +17,7 @@ removepkg distcc nv-codec-headers
 removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
 removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
-removepkg gst-plugins-bad-free pipewire
+removepkg gst-plugins-bad-free pipewire wireplumber
 # N
 removepkg alpine biff+comsat bootp elm epic5 htdig ipw2100-fw
 removepkg ipw2200-fw irssi links ncftp netatalk nmap nn
@@ -26,8 +26,9 @@ removepkg ytalk zd1211-firmware
 # T
 removepkg fig2dev xfig
 # X
-removepkg OpenCC anthy fcitx5 fcitx5-anthy fcitx5-chinese-addons
-removepkg fcitx5-gtk fcitx5-hangul fcitx5-kkc fcitx5-m17n fcitx5-qt
+removepkg OpenCC anthy fcitx5-anthy fcitx5-chinese-addons fcitx5-gtk
+removepkg fcitx5-hangul fcitx5-kkc fcitx5-m17n fcitx5-qt fcitx5-sayura
+removepkg fcitx5-table-extra fcitx5-table-other fcitx5-unikey fcitx5
 removepkg ibus-anthy ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n
 removepkg ibus-table ibus-unikey ibus libkkc-data libkkc libpinyin
 removepkg motif sazanami-fonts-ttf sinhala_lklug-font-ttf skkdic
@@ -45,6 +46,7 @@ removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
 # Instalando o slackpkg+
 installpkg configs/slackpkg+-1.8.2-noarch-1alien.txz
+cp configs/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf
 
 # Atualizando o mirrors do slackpkg (Current)
 cp configs/mirrors /etc/slackpkg/mirrors

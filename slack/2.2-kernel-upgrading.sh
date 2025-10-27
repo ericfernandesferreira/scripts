@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=6.10.6
-OLD_LIB=6.10.6
-NEW=6.10.7
+OLD=6.17.5
+OLD_LIB=6.17.5
+NEW=6.17.6
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -41,7 +41,7 @@ cd /usr/src
 rm -rf linux-$OLD
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p3
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

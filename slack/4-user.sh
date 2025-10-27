@@ -26,6 +26,7 @@ echo "nv-codec-headers" >> /etc/slackpkg/blacklist
 echo "ffmpeg" >> /etc/slackpkg/blacklist
 echo "fluidsynth" >> /etc/slackpkg/blacklist
 echo "openal-soft" >> /etc/slackpkg/blacklist
+echo "wireplumber" >> /etc/slackpkg/blacklist
 
 # Arrumando a greylist do slackpkg+
 echo "gst-plugins-good" >> /etc/slackpkg/greylist

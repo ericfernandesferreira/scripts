@@ -1,13 +1,9 @@
 #!/bin/sh
 
-NEW=6.10.7
-
-# Instalando o intel-microcode
-# upgradepkg --reinstall --install-new configs/intel-microcode-20220510-noarch-1_SBo.tgz
+NEW=6.17.5
 
 # Removendo o kernel antigo
 removepkg kernel-generic
-removepkg kernel-huge
 removepkg kernel-modules
 removepkg kernel-source
 rm -rf /usr/src/linux
@@ -37,10 +33,7 @@ ln -s /boot/config-$NEW /boot/config
 ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
-# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
-
-# Fazendo com que o GRUB reconheça o Windows
-echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+# mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p3
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
