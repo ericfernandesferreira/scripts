@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Connectando numa rede Wifi
-nmcli device wifi connect "EricNet @5ghz" password 0097079248
+nmcli device wifi connect "EricNET" password Grinder@2025
 
 # Script que atualiza e remove algumas coisas
 
@@ -44,7 +44,7 @@ removepkg xf86-video-sisusb xf86-video-tdfx xf86-video-tga xf86-video-trident
 removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
 # Instalando o slackpkg+
-installpkg configs/slackpkg+-1.8.0-noarch-7mt.txz
+installpkg configs/slackpkg+-1.8.2-noarch-1alien.txz
 
 # Atualizando o mirrors do slackpkg (Current)
 cp configs/mirrors /etc/slackpkg/mirrors
