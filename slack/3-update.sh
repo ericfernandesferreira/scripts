@@ -23,11 +23,11 @@ removepkg ytalk zd1211-firmware
 # T
 removepkg fig2dev xfig
 # X
-removepkg OpenCC anthy fcitx5 fcitx5-anthy fcitx5-chinese-addons
-removepkg fcitx5-gtk fcitx5-hangul fcitx5-kkc fcitx5-m17n fcitx5-qt
-removepkg ibus-anthy ibus-hangul ibus-kkc ibus-libpinyin ibus-m17n
-removepkg ibus-table ibus-unikey ibus libkkc-data libkkc libpinyin
-removepkg motif sazanami-fonts-ttf sinhala_lklug-font-ttf skkdic
+removepkg OpenCC anthy fcitx5 fcitx5-anthy fcitx5-chinese-addons fcitx5-sayura
+removepkg fcitx5-gtk fcitx5-hangul fcitx5-kkc fcitx5-m17n fcitx5-qt fcitx5-unikey
+removepkg fcitx5-table-extra fcitx5-table-other ibus-anthy ibus-hangul ibus-kkc
+removepkg ibus-libpinyin ibus-m17nibus-table ibus-unikey ibus libkkc-data libkkc
+removepkg libpinyin motif sazanami-fonts-ttf sinhala_lklug-font-ttf skkdic
 removepkg tibmachuni-font-ttf ttf-indic-fonts ttf-tlwg wqy-zenhei-font-ttf
 removepkg xinput_calibrator xf86-input-acecad xf86-input-aiptek xf86-input-void
 removepkg xf86-video-amdgpu xf86-video-apm xf86-video-ark xf86-video-ast
@@ -41,7 +41,7 @@ removepkg xf86-video-sisusb xf86-video-tdfx xf86-video-tga xf86-video-trident
 removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
 # Instalando o slackpkg+
-installpkg configs/slackpkg+-1.8.0-noarch-7mt.txz
+installpkg configs/slackpkg+-1.8.2-noarch-1alien.txz
 cp configs/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf
 
 # Atualizando o mirrors do slackpkg (Current)

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=6.11.4
-OLD_LIB=6.11.4
-NEW=6.11.5
+OLD=6.14.6
+OLD_LIB=6.14.6
+NEW=6.14.8
 
 # Compilando o novo kernel
 cd /home/backup/kernel
