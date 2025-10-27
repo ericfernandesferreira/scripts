@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OLD=6.11.5-gentoo
-NEW=6.11.5-gentoo-r1
+OLD=6.14.3-gentoo
+NEW=6.14.5-gentoo
 
 # Trocando o kernel default para o novo
 eselect kernel set 2
@@ -29,8 +29,8 @@ rm /boot/System.map-$OLD
 rm /boot/vmlinuz-$OLD
 
 # Criando os symlinks
-ln -s /boot/System.map /boot/System.map-$VERSION
-ln -s /boot/vmlinuz /boot/vmlinuz-$VERSION
+ln -s /boot/System.map /boot/System.map-$NEW
+ln -s /boot/vmlinuz /boot/vmlinuz-$NEW
 
 # Gerando o grub com o kernel atualizado
 grub-mkconfig -o /boot/grub/grub.cfg
