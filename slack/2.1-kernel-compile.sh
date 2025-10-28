@@ -4,10 +4,9 @@ NEW=6.17.5
 
 # Removendo o kernel antigo
 removepkg kernel-generic
-removepkg kernel-modules
 removepkg kernel-source
 rm -rf /usr/src/linux
-rm /boot/initrd.gz
+rm /boot/{amd-ucode.img,intel-ucode.img,initrd*}
 
 # Compilando o novo kernel
 cd /home/backup/kernel

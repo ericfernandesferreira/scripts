@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=6.10.6
-VERSION_MODULES=6.10.6
+VERSION=6.17.5
+VERSION_MODULES=6.17.5
 
 # Removendo o kernel antigo
 rm /boot/System.map
@@ -13,10 +13,13 @@ rm /boot/vmlinuz-$VERSION
 rm -rf /lib/modules/$VERSION_MODULES
 
 # Compilando o novo kernel
-cd /usr/src/linux-$VERSION
-cp .config /home/backup/kernel/configs/grinder-slackware
-make mrproper
-cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux/.config
+cp /usr/src/linux-$VERSION/.config /home/backup/kernel/configs/grinder-slackware
+rm -rf /usr/src/linux && rm -rf /usr/src/linux-$VERSION
+tar xvf /home/backup/kernel/linux-$VERSION.tar.xz -C /usr/src
+cd /usr/src
+ln -s linux-$VERSION linux
+cp /home/backup/kernel/configs/grinder-slackware /usr/src/linux-$VERSION/.config
+cd linux-$VERSION
 make -j9 bzImage && make -j9 modules && make modules_install
 
 # Copiando arquivos do novo kernel
