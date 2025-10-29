@@ -17,7 +17,7 @@ removepkg distcc nv-codec-headers
 removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
 removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
-removepkg gst-plugins-bad-free pipewire wireplumber
+removepkg pipewire wireplumber
 # N
 removepkg alpine biff+comsat bootp elm epic5 htdig ipw2100-fw
 removepkg ipw2200-fw irssi links ncftp netatalk nmap nn
