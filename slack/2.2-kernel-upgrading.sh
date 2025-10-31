@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=6.14.6
-OLD_LIB=6.14.6
-NEW=6.14.8
+OLD=6.17.6
+OLD_LIB=6.17.6
+NEW=6.17.7
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -35,8 +35,6 @@ rm /boot/System.map-$OLD
 rm /boot/vmlinuz-$OLD
 rm /boot/config-$OLD
 rm -rf /lib/modules/$OLD_LIB
-cd /usr/src/linux-$OLD
-make mrproper
 cd /usr/src
 rm -rf linux-$OLD
 

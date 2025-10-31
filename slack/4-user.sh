@@ -30,6 +30,5 @@ echo "wireplumber" >> /etc/slackpkg/blacklist
 
 # Arrumando a greylist do slackpkg+
 echo "gst-plugins-good" >> /etc/slackpkg/greylist
-echo "gst-plugins-bad-free" >> /etc/slackpkg/greylist
 echo "pipewire" >> /etc/slackpkg/greylist
 echo "pulseaudio" >> /etc/slackpkg/greylist

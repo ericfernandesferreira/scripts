@@ -1,13 +1,12 @@
 #!/bin/sh
 
-NEW=6.12.5
+NEW=6.17.6
 
 # Removendo o kernel antigo
 removepkg kernel-generic
-removepkg kernel-modules
 removepkg kernel-source
 rm -rf /usr/src/linux
-rm /boot/initrd.gz
+rm /boot/{amd-ucode.img,intel-ucode.img,initrd*}
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -36,7 +35,7 @@ ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 # mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p6
 
 # Adicionando a entrada do Windows no GRUB
-# cp /home/backup/scripts/slack/configs/40_custom /etc/grub.d/40_custom
+cp /home/backup/scripts/slack/configs/40_custom /etc/grub.d/40_custom
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
