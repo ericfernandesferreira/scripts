@@ -14,7 +14,7 @@ removepkg madplay mc moc most radeontool soma undervolt zsh
 # D
 removepkg distcc nv-codec-headers
 # L
-removepkg fluidsynth ffmpeg freecell-solver grantlee kdsoap rttr
+removepkg fluidsynth freecell-solver grantlee kdsoap rttr
 removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
 removepkg pipewire wireplumber

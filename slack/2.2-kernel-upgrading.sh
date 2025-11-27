@@ -2,7 +2,7 @@
 
 OLD=6.17.5
 OLD_LIB=6.17.5
-NEW=6.17.6
+NEW=6.17.8
 
 # Compilando o novo kernel
 cd /home/backup/kernel
