@@ -1,8 +1,8 @@
 #!/bin/sh
 
-OLD=6.18.2
-OLD_LIB=6.18.2
-NEW=6.18.4
+OLD=6.18.7
+OLD_LIB=6.18.7
+NEW=6.18.8
 
 # Compilando o novo kernel
 cd /home/backup/kernel
@@ -31,10 +31,10 @@ rm /boot/vmlinuz
 ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Removendo o kernel antigo
+rm /boot/*.img
 rm /boot/System.map-$OLD
 rm /boot/vmlinuz-$OLD
 rm /boot/config-$OLD
-rm /boot/*.img
 rm -rf /lib/modules/$OLD_LIB
 cd /usr/src/linux-$OLD
 make mrproper

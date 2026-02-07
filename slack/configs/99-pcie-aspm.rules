@@ -1,0 +1,3 @@
+SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="0", RUN+="/bin/sh -c 'echo powersave > /sys/module/pcie_aspm/parameters/policy'"
+
+SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="1", RUN+="/bin/sh -c 'echo default > /sys/module/pcie_aspm/parameters/policy'"

@@ -1,0 +1,3 @@
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10ec", ATTR{device}=="0x8168", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10ec", ATTR{device}=="0x8168", ATTR{power/wakeup}="disabled"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", ATTR{device/power/wakeup}="disabled"

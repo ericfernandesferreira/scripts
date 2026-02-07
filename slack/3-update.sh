@@ -17,7 +17,7 @@ removepkg distcc nv-codec-headers
 removepkg fluidsynth freecell-solver grantlee kdsoap rttr
 removepkg libdiscid libdmtx libfakekey libgnt libkarma
 removepkg libnjb libqalculate loudmouth pilot-link qtkeychain quazip
-removepkg pipewire wireplumber
+removepkg pipewire wireplumber phonon-backend-mpv
 # N
 removepkg alpine biff+comsat bootp elm epic5 htdig ipw2100-fw
 removepkg ipw2200-fw irssi links ncftp netatalk nmap nn
@@ -44,12 +44,13 @@ removepkg xf86-video-savage xf86-video-siliconmotion xf86-video-sis
 removepkg xf86-video-sisusb xf86-video-tdfx xf86-video-tga xf86-video-trident
 removepkg xf86-video-tseng xf86-video-voodoo xf86-video-xgi xf86-video-xgixp
 
-# Instalando o slackpkg+
-installpkg configs/slackpkg+-1.8.2-noarch-1alien.txz
-cp configs/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf
-
 # Atualizando o mirrors do slackpkg (Current)
 cp configs/mirrors /etc/slackpkg/mirrors
 slackpkg update gpg
+slackpkg update
+
+# Instalando o slackpkg+
+slackpkg install slackpkg+
+cp configs/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf
 slackpkg update
 slackpkg upgrade-all

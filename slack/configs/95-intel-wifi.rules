@@ -1,0 +1,3 @@
+SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="0", RUN+="/bin/sh -c 'for i in /sys/bus/pci/devices/*; do if [ \"$(cat $i/vendor 2>/dev/null)\" = \"0x8086\" ] && [ \"$(cat $i/device 2>/dev/null)\" = \"0xa0f0\" ]; then echo auto > $i/power/control; fi; done'"
+
+SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="1", RUN+="/bin/sh -c 'for i in /sys/bus/pci/devices/*; do if [ \"$(cat $i/vendor 2>/dev/null)\" = \"0x8086\" ] && [ \"$(cat $i/device 2>/dev/null)\" = \"0xa0f0\" ]; then echo on > $i/power/control; fi; done'"

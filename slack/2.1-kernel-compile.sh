@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NEW=6.17.5
+NEW=6.17.8
 
 # Removendo o kernel antigo
 removepkg kernel-generic
@@ -33,6 +33,10 @@ ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 
 # Gerando o initramfs
 # mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p3
+
+# Ajustando o /etc/defaults/grub
+sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=""/GRUB_CMDLINE_LINUX_DEFAULT="pcie_aspm=force"/' /etc/default/grub
+sudo sed -i 's/^GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=true/' /etc/default/grub
 
 # Gerando o novo GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
