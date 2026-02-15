@@ -2,11 +2,7 @@
 
 # Define a pasta onde o script está
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_DATA="$DIR/sot_acumulado.log"
 LOG_VISUAL="$DIR/sot_visual.log"
-
-# Inicializa o log de dados se não existir
-if [ ! -f "$LOG_DATA" ]; then echo 0 > "$LOG_DATA"; fi
 
 # Timestamp inicial
 ULTIMA_VERIFICACAO=$(date +%s)
@@ -23,19 +19,16 @@ while true; do
     
     if [ "$SCREEN_STATUS" == "On" ]; then
         DIFERENCA=$((AGORA - ULTIMA_VERIFICACAO))
-        ACUMULADO=$(cat "$LOG_DATA")
-        NOVO_TOTAL=$((ACUMULADO + DIFERENCA))
-        echo $NOVO_TOTAL > "$LOG_DATA"
-    else
-        NOVO_TOTAL=$(cat "$LOG_DATA")
+        # Cálculo de tempo de tela (SOT) para exibição imediata
+        TOTAL_SESSAO=$((TOTAL_SESSAO + DIFERENCA))
     fi
     
     ULTIMA_VERIFICACAO=$AGORA
 
     # 4. Formata o Tempo de Tela (SOT)
-    H=$((NOVO_TOTAL / 3600))
-    M=$(( (NOVO_TOTAL % 3600) / 60 ))
-    S=$((NOVO_TOTAL % 60))
+    H=$((TOTAL_SESSAO / 3600))
+    M=$(( (TOTAL_SESSAO % 3600) / 60 ))
+    S=$((TOTAL_SESSAO % 60))
 
     # 5. Grava no Log Visual (sobrescrevendo para não crescer infinitamente)
     # Se preferir que ele mantenha o histórico de cada segundo (como no seu exemplo), 
@@ -46,5 +39,5 @@ while true; do
         printf "Tempo do Xorg: %s\n" "$XORG_TIME"
     } > "$LOG_VISUAL"
 
-    sleep 1
+    sleep 60
 done

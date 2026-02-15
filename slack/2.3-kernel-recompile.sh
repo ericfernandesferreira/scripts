@@ -1,9 +1,10 @@
 #!/bin/sh
 
-VERSION=6.18.8
-VERSION_MODULES=6.18.8
+VERSION=6.19
+VERSION_MODULES=6.19.0
 
 # Removendo o kernel antigo
+rm /boot/*.img
 rm /boot/System.map
 rm /boot/System.map-$VERSION
 rm /boot/config

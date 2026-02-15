@@ -24,5 +24,5 @@ while true; do
   # Output organizado
   echo "$DATA | Consumo: $WATTS W | GPU: $GPU_STATUS | Gov: $GOV | CPU: ${FREQ}MHz | Load: ${CPU_LOAD}% | Temp: ${TEMP}°C" >> consumo_energia.txt
   
-  sleep 15
+  sleep 30
 done

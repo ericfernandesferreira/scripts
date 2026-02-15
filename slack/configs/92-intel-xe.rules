@@ -1,3 +1,0 @@
-SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="0", RUN+="/bin/sh -c 'echo power_saving > /sys/class/drm/card0/device/tile0/gt0/freq0/power_profile'"
-
-SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="1", RUN+="/bin/sh -c 'echo base > /sys/class/drm/card0/device/tile0/gt0/freq0/power_profile'"

@@ -10,6 +10,7 @@ printf "%-35s | %-20s | %-10s\n" "PCI Bridge NVMe (00:06.0)" $(cat /sys/bus/pci/
 printf "%-35s | %-20s | %-10s\n" "PCI Bridge Ethernet (00:1c.3)" $(cat /sys/bus/pci/devices/0000:00:1c.3/power/control) $(cat /sys/bus/pci/devices/0000:00:1c.3/power/runtime_status)
 printf "%-35s | %-20s | %-10s\n" "Intel GNA IA (00:08.0)" $(cat /sys/bus/pci/devices/0000:00:08.0/power/control) $(cat /sys/bus/pci/devices/0000:00:08.0/power/runtime_status)
 printf "%-35s | %-20s | %-10s\n" "Intel Dynamic Tuning (00:04.0)" $(cat /sys/bus/pci/devices/0000:00:04.0/power/control) $(cat /sys/bus/pci/devices/0000:00:04.0/power/runtime_status)
+printf "%-35s | %-20s | %-10s\n" "Intel Telemetry Driver (00:0a.0)" $(cat /sys/bus/pci/devices/0000:00:0a.0/power/control) $(cat /sys/bus/pci/devices/0000:00:0a.0/power/runtime_status)
 
 # --- VÍDEO (HÍBRIDO) ---
 printf "%-35s | %-20s | %-10s\n" "Intel Iris Xe GPU (00:02.0)" $(cat /sys/bus/pci/devices/0000:00:02.0/power/control) $(cat /sys/bus/pci/devices/0000:00:02.0/power/runtime_status)

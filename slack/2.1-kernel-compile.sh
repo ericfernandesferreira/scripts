@@ -35,7 +35,7 @@ ln -s /boot/vmlinuz-$NEW /boot/vmlinuz
 # mkinitrd -c -k $NEW -m ext4 -f ext4 -r /dev/nvme0n1p3
 
 # Ajustando o /etc/defaults/grub
-sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=""/GRUB_CMDLINE_LINUX_DEFAULT="pcie_aspm=force"/' /etc/default/grub
+sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=""/GRUB_CMDLINE_LINUX_DEFAULT="pcie_aspm=force snd-intel-dspcfg.dsp_driver=3"/' /etc/default/grub
 sudo sed -i 's/^GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=true/' /etc/default/grub
 
 # Gerando o novo GRUB
